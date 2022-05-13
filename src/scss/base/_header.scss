@@ -39,7 +39,8 @@ body {
     right: 0;
 
     svg {
-      width: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       fill: $clr-gray600;
     }
 
@@ -79,7 +80,8 @@ body {
     }
 
     svg {
-      width: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       fill: $clr-gray600;
     }
   }
@@ -100,7 +102,16 @@ body {
 #nav__checkbox:checked ~ label.nav__toggle .menu {
   display: none;
 }
-
+.nav__center{
+  >li{
+    >a{
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      text-transform: uppercase;
+    }
+  }
+}
 // Desktop view
 @media only screen and (min-width: 560px) {
   .nav {
@@ -116,6 +127,13 @@ body {
       }
     }
   }
+  .nav__center{
+    display: flex;
+    >li{
+      padding: 0 20px;
+    }
+  }
+
 }
 
 .logo-second-hand{

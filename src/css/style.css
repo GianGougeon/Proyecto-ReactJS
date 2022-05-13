@@ -25,7 +25,8 @@ body {
   right: 0;
 }
 .nav__toggle svg {
-  width: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   fill: #2a324b;
 }
 .nav__toggle .close {
@@ -57,7 +58,8 @@ body {
   font-size: 1.2rem;
 }
 .nav__menu svg {
-  width: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   fill: #2a324b;
 }
 
@@ -77,6 +79,13 @@ body {
   display: none;
 }
 
+.nav__center > li > a {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
 @media only screen and (min-width: 560px) {
   .nav__toggle {
     display: none;
@@ -87,12 +96,41 @@ body {
   .nav__menu li {
     display: block;
   }
+
+  .nav__center {
+    display: flex;
+  }
+  .nav__center > li {
+    padding: 0 20px;
+  }
 }
 .logo-second-hand {
   width: 50px;
   display: flex;
   align-items: center;
   border-radius: 50%;
+}
+
+.Cart-div {
+  width: 57px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.BsFillCartFill-number {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  bottom: 27%;
+  right: 20%;
+  background-color: red;
+  border-radius: 67% 33% 65% 35%/46% 39% 61% 54%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

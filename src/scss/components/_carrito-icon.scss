@@ -1,0 +1,21 @@
+.Cart-div{
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.BsFillCartFill-number {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    bottom: 27%;
+    right: 20%;
+    background-color: red;
+    border-radius: 67% 33% 65% 35%/46% 39% 61% 54%;
+    // numero
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}

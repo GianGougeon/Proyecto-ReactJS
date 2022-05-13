@@ -1,5 +1,6 @@
 import '../../css/style.css';
 import logo from '../../img/logo.jpg';
+import CartWidget from './CartWidget'
 const NavBar = () => {
 
   return (
@@ -18,10 +19,17 @@ const NavBar = () => {
         {/* logo */}
         <img className='logo-second-hand' src={logo} />
       </a></li>
-    <li><a href="#!">Inicio</a></li>
-    <li><a href="#!">Tienda</a></li>
-    <li><a href="#!">Contacto</a></li>
+    <li>
+      <ul className='nav__center'>
+        <li><a href="#!">Inicio</a></li>
+        <li><a href="#!">Tienda</a></li>
+        <li><a href="#!">Contacto</a></li>
+      </ul>
+    </li>
+    <CartWidget  />
+    
   </ul>
+  
 </nav>
   );
 }
