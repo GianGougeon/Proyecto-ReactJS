@@ -35,7 +35,7 @@ body {
   &__toggle {
     position: absolute;
     cursor: pointer;
-    margin: 0rem 1rem;
+    margin: 1.2rem 1rem;
     right: 0;
 
     svg {
@@ -60,7 +60,7 @@ body {
   &__menu {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     margin: 1rem;
 
@@ -84,27 +84,33 @@ body {
       height: 2rem;
       fill: $clr-gray600;
     }
+
   }
 }
 
 // Toggle the hamburger menu in mobile view
-#nav__checkbox:checked ~ ul.nav__menu li {
-  display: block;
-}
-.nav__menu{
-  justify-content: space-evenly;
-}
-//Change from menu to close icon on tap
-#nav__checkbox:checked ~ label.nav__toggle .close {
+#nav__checkbox:checked~ul.nav__menu li {
   display: block;
 }
 
-#nav__checkbox:checked ~ label.nav__toggle .menu {
+.nav__menu {
+  justify-content: space-evenly;
+}
+
+//Change from menu to close icon on tap
+#nav__checkbox:checked~label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked~label.nav__toggle .menu {
   display: none;
 }
-.nav__center{
-  >li{
-    >a{
+
+.nav__center {
+  width: 100vw;
+
+  >li {
+    >a {
       display: flex;
       justify-content: center;
       padding: 10px 0;
@@ -112,6 +118,22 @@ body {
     }
   }
 }
+
+@media (max-width: 559px) {
+  .nav__center {
+    >li {
+      &:active {
+        background-color: grey;
+      }
+    }
+  }
+}
+
+.nav__ref {
+  border-top: 1px solid #f4f6fa;
+  border-bottom: 1px solid #f4f6fa;
+}
+
 // Desktop view
 @media only screen and (min-width: 560px) {
   .nav {
@@ -126,20 +148,65 @@ body {
         display: block;
       }
     }
+
+    .nav__ref {
+      border: none;
+    }
+
   }
-  .nav__center{
+  .nav__center {
+    width: auto;
     display: flex;
-    >li{
+
+    >li {
       padding: 0 20px;
+
+      // Efecto hover
+      a {
+        color: #18272F;
+        position: relative;
+        text-decoration: none;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          border-radius: 5px;
+          background-color: #83a5ab;
+          bottom: 5px;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform .3s ease-in-out;
+        }
+
+        &:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+
+        &:hover {
+          transition: all .3s ease;
+          -webkit-transition: all .3s ease;
+          color: #83a5ab;
+
+        }
+      }
     }
   }
-
+  .nav__menu{
+    margin: 0;
+  }
 }
 
-.logo-second-hand{
-  width: 50px;
+.logo-second-hand {
+  width: 80px;
   display: flex;
   align-items: center;
   border-radius: 50%;
+  filter: contrast(2);
 
 }

@@ -1,5 +1,13 @@
+//Variables
+@import './components/variables';
+//Scroll
+@import './base/scrollbar';
+
 //Header
 @import './base/header';
 
 //carrito-icon
 @import './components/carrito-icon';
+
+//ItemCount
+@import './components/itemCount';

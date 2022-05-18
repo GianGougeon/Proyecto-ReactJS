@@ -1,5 +1,5 @@
 import '../../css/style.css';
-import logo from '../../img/logo.jpg';
+import logo2 from '../../img/logo-2.png';
 import CartWidget from './CartWidget'
 const NavBar = () => {
 
@@ -17,9 +17,9 @@ const NavBar = () => {
   <ul className="nav__menu">
     <li><a href="#!">
         {/* logo */}
-        <img className='logo-second-hand' src={logo} />
+        <img className='logo-second-hand' src={logo2} />
       </a></li>
-    <li>
+    <li className='nav__ref'>
       <ul className='nav__center'>
         <li><a href="#!">Inicio</a></li>
         <li><a href="#!">Tienda</a></li>
