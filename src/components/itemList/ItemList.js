@@ -1,11 +1,11 @@
 import React from 'react'
-import Item from './Item'
+import Item from '../Item'
 
 export const ItemList = ({listaProductos}) => {
   return (
     <>
     
-    <h2 className='container'>Lista de productos:</h2>
+    <h2 className='container-Card'>Lista de productos:</h2>
     <div className='Card-itemlist container'>
       
       <>

@@ -1,0 +1,116 @@
+.ItemDetail {
+    margin: 20px;
+}
+.indice-ItemDetail {
+    padding: 5px;
+}
+.indice-estructura {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    >li {
+        text-decoration: none;
+        list-style: none;
+        >span {
+            padding: 5px;
+        }
+        >a {
+            cursor: pointer;
+        }
+    }
+}
+.ItemDetail-c {
+    border-radius: 5px;
+    padding: 50px;
+}
+.ItemDetail-col2 {
+    background-color: $main-color-2;
+    padding: 20px 0;
+}
+.ItemDetail-col2-container {
+    padding: 0 20px;
+}
+/* titulo prducto */
+.Titulo-producto {
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+/* bordes hr */
+.ItemDetail-hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, $main-color, transparent);
+}
+.ItemDetail-hr-2 {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, $main-color, $main-color-3, $main-color);
+}
+/* stock producto */
+.Stock-producto {
+    font-size: 1.2em;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+/* precio producto */
+.Precio-producto {
+    font-size: 1.7em;
+    display: flex;
+    justify-content: start;
+    padding: 5% 0;
+}
+.Descripcion-producto {
+    font-size: 1.3em;
+    padding: 10% 0 0 0;
+    display: flex;
+    font-weight: 200;
+}
+.carousel {
+    margin: auto !important;
+    >div {
+        width: 500px !important;
+    }
+    img> {
+        border-radius: 10px !important
+    }
+}
+/* medias */
+@media (min-width: 992px) {
+    .carousel {
+        >div {
+            width: 400px !important;
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .carousel {
+        >div {
+            width: 500px !important;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .carousel {
+        >div {
+            width: 340px !important;
+        }
+    }
+    .ItemDetail {
+        margin: 20px 10px;
+    }
+}
+.ItemDetail-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ItemDetail-extra-drop {
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+}

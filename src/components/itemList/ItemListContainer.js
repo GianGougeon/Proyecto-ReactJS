@@ -1,8 +1,12 @@
+// hoks
 import { useEffect } from "react";
 import { useState } from "react";
+//itemlist
 import ItemList from "./ItemList";
-import ItemCount from "./ItemCount";
-import { getData } from "../data/data";
+//itemcount
+import ItemCount from "../ItemCount";
+//GetData = Promise array
+import { getData } from "../../data/data";
 
 const  ItemListContainer = ({Contenido}) =>{
 

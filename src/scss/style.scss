@@ -8,6 +8,8 @@
 @import './base/scrollbar';
 //loader
 @import './components/loading';
+//boostrap-grid
+@import './components/boostrap-grid';
 
 
 //Header
@@ -21,3 +23,6 @@
 
 //itemlistcontainer
 @import './components/itemListContainer';
+
+//ItemDetail
+@import './components/itemDetail';

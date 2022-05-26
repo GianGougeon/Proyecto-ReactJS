@@ -1,3 +1,7 @@
+.contador{
+    display: flex;
+    justify-content: center;
+}
 .ItemCountDiv {
 
     background-color: #f5f5f5;
@@ -59,7 +63,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 0;
     // desactivar seleccionar texto
     -webkit-touch-callout: none;
     -webkit-user-select: none;

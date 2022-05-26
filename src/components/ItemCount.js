@@ -25,9 +25,9 @@ const ItemCount = ({initial, stock}) => {
         }
     return( 
 
-        <div className="contador" style={{justifyContent: 'center', display: 'flex', paddingTop: '20vh'}}>
+        <div className="contador">
             <div className="ItemCountDiv">
-                <p>Prenda</p>
+            <span className='Stock-producto'>Disponible: {stock}</span>
                 <div className="ItemCount">
                     {stock === 0 ? null : <button onClick={decrement}>−</button>}
                     <label>{stockValue}</label>
