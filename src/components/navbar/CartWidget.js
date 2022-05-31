@@ -1,21 +1,22 @@
 import { BsFillCartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import './../../css/style.css';
 
 const CartWidget = () => {
     // Carrito contador
-    let CartWidgetNumber = 5
+    let CartWidgetNumber = 7
 
     return(
-        <li>
-            <a>
+        <>
+            <Link to={"/cart"}>
                 <div className="Cart-div">
                     <BsFillCartFill />
                     <div className="BsFillCartFill-number">
                         {CartWidgetNumber}
                     </div>
                 </div>
-            </a>
-        </li>
+            </Link>
+        </>
     )
 }
 export default CartWidget;

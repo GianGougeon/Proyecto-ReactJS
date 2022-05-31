@@ -1,0 +1,53 @@
+body {
+
+    padding: 0 0 300px 0;
+    font-family: "Andika New Basic", sans-serif;
+    font-weight: 700;
+    color: $clr-gray600;
+    background: #EEEEEE;
+    
+
+    &::before {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        height: 200px;
+        width: 200px;
+        background: rgb(0, 255, 255);
+        filter: blur(240px);
+    }
+
+    &::after {
+        content: "";
+        z-index: -1;
+        position: fixed;
+        top: 200px;
+        left: 250px;
+        height: 200px;
+        width: 200px;
+        background: rgb(183, 0, 255);
+        filter: blur(240px);
+    }
+}
+
+.fondo-circle {
+    position: fixed;
+    z-index: -1;
+    bottom: 100px;
+    right: 250px;
+    height: 200px;
+    width: 200px;
+    background: rgb(183, 0, 255);
+    filter: blur(250px);
+}
+
+.fondo-circle2 {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    right: 0px;
+    height: 200px;
+    width: 200px;
+    background: rgb(0, 255, 255);
+    filter: blur(240px);
+}

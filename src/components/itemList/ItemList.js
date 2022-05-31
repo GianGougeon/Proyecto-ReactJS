@@ -8,9 +8,9 @@ export const ItemList = ({listaProductos}) => {
     <h2 className='container-Card'>Lista de productos:</h2>
     <div className='Card-itemlist container'>
       
-      <>
+
           {listaProductos.map((productos) =><Item key={productos.id} producto={productos}/>)}
-      </>
+
     </div>
     
     

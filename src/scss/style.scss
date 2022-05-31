@@ -11,6 +11,8 @@
 //boostrap-grid
 @import './components/boostrap-grid';
 
+//boody
+@import './base/body';
 
 //Header
 @import './base/header';
@@ -26,3 +28,9 @@
 
 //ItemDetail
 @import './components/itemDetail';
+
+//Pages
+@import './components/inicio';
+
+// Categoria-inicio
+@import './components/Categoria-inicio'
