@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ initial, stock, onCheck }) => {
     // usestate
     let [stockValue, setStock] = useState(initial);
     // incremento del valor
@@ -15,27 +15,22 @@ const ItemCount = ({ initial, stock }) => {
     if (stock === 0) {
         stockValue = 'No disponible'
     }
-    // boton de agregar
-    const onAdd = () => {
-        if (stockValue === 'No disponible') {
-            return null
-        } else {
-            alert(`Agregado: ${stockValue}`)
-        }
-    }
     return (
 
         <div className="contador">
             <div className="ItemCountDiv">
                 {stock === 0 ? null : <span className='Stock-producto'>Disponible: {stock}</span>}
-                {stock === 1 ? null : <div className="ItemCount">
-                    <button onClick={decrement}>−</button>
+                <div className="ItemCount">
+                    {stock === 0 ? null : <button onClick={decrement}>−</button>}
+
                     <label>{stockValue}</label>
-                    <button onClick={increment}>+</button>
-                </div>}
+
+                    {stock === 0 ? null : <button onClick={increment}>+</button>}
+
+                </div>
 
                 {stock === 0 ? null : <div className="ItemCount-Agregar">
-                    <button onClick={onAdd}>Agregar al Carrito</button>
+                    <button onClick={() => onCheck(stockValue)}>Agregar al Carrito</button>
                 </div>}
 
             </div>

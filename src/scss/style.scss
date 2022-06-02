@@ -21,16 +21,21 @@
 @import './components/carrito-icon';
 
 //ItemCount
-@import './components/itemCount';
+@import './components/tienda/itemCount';
 
 //itemlistcontainer
-@import './components/itemListContainer';
+@import './components/tienda/itemListContainer';
 
 //ItemDetail
-@import './components/itemDetail';
+@import './components/tienda/itemDetail';
 
 //Pages
-@import './components/inicio';
+@import './components/inicio/inicio';
 
 // Categoria-inicio
-@import './components/Categoria-inicio'
+@import './components/inicio/categoria-inicio';
+
+@import './components/tienda/categoria';
+
+//
+@import './components/dropdown';

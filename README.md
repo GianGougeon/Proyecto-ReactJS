@@ -1,17 +1,12 @@
-# Proyecto E-Commerce @lenu_second_hand
+# Proyecto E-Commerce
 
-Proyecto elaborado en ReactJS [Create React App](https://github.com/facebook/create-react-app).
-
-## Material utilizados:
+Proyecto elaborado en:  &nbsp; ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 
-### react-icons
+### Dependencies utilizadas :
 
-[react-icons](https://github.com/react-icons/react-icons) implementacion de iconos
-
-### Sass
-
-[Sass](https://github.com/sass/sass) mejor manejo de estilos en css
-
-
-
+*   `react-bootstrap`: `^2.4.0`
+*   `react-icons`: `^4.3.1`
+*   `react-dom`: `^18.1.0`
+*   `react-router-dom`: `^6.3.0`
+*   `react-responsive-carousel`: `^3.2.23`

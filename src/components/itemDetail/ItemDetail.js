@@ -1,10 +1,24 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import ItemCount from '../ItemCount';
 import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({ item }) => {
+    const [ItemChek, setItemChek] = useState(0);
+
+
+    const onCheck = (e) => {
+
+
+        if (e === 0) {
+            return null
+        } else {
+            alert("Agregado: " + e)
+            setItemChek(e);
+        }
+
+    }
 
     return (
         <section className='ItemDetail'>
@@ -65,7 +79,19 @@ export const ItemDetail = ({ item }) => {
                                 </p>
                             </div>
                             <hr className='ItemDetail-hr'></hr>
-                            <ItemCount stock={item.stock} initial={1} />
+                            {ItemChek === 0
+                                ? <ItemCount stock={item.stock} initial={ItemChek} onCheck={onCheck} />
+                                : <div className='ItemCount-Check'>
+                                    <ul>
+                                        <li><Link to={"/cart"}>
+                                            <button>Ir al carrito</button>
+                                        </Link>
+                                        </li>
+                                        <li><Link to={"/tienda"}>
+                                            <button>Seguir comprando</button>
+                                        </Link></li>
+                                    </ul>
+                                </div>}
                             <div>
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
