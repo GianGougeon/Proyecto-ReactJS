@@ -1,56 +1,92 @@
 .Categoria-inicio {
     margin: 50px 0;
-    >div{
+
+    >div {
         margin: 40px 0;
+
         >h3 {
             display: flex;
             justify-content: center;
             font-size: 3em;
             font-weight: bold;
+
             @media(max-width: 600px) {
                 padding-left: 25vw;
             }
         }
     }
+
     >div {
         display: flex;
         justify-content: center;
-        @media (max-width:1200px){
+
+        @media (max-width:1200px) {
             flex-direction: column;
         }
+
         >div {
             position: relative;
             display: flex;
             flex-wrap: wrap;
-            
-            @media (max-width:1200px){
+
+            @media (max-width:1200px) {
                 margin: auto;
             }
-            
+
             >img {
                 width: 400px;
                 margin: 10px;
+                filter: blur(1px) grayscale(0.3);
             }
+
             >li {
                 text-decoration: none;
                 list-style: none;
-                >a>div {
-                    width: 200px;
-                    height: 67px;
-                    background-color: $clr-gray100;
-                    position: absolute;
-                    top: 80%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 15px;
-                    >h4 {
-                        text-transform: uppercase;
-                        font-size: 2em;
-                        color: $clr-gray600;
+
+                >a {
+                    >div {
+                        width: 200px;
+                        height: 50px;
+                        position: absolute;
+                        background-color: #DAC8B5;
+                        top: 80%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 15px;
+
+                        &:active {
+                            box-shadow: inset 0px 0px 8px rgb(0 0 0 / 60%);
+                        }
+
+                        >h4 {
+                            text-transform: uppercase;
+                            font-size: 2em;
+                            color: $clr-gray600;
+                        }
                     }
+                }
+            }
+        }
+
+        >div:nth-child(2) {
+            >li>a>div {
+                background-color: #3255A5;
+
+                >h4 {
+                    color: white;
+                }
+            }
+        }
+
+        >div:nth-child(3) {
+            >li>a>div {
+                background-color: #868686;
+
+                >h4 {
+                    color: $clr-gray200;
                 }
             }
         }

@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import ItemCount from '../ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext'
 
 export const ItemDetail = ({ item }) => {
     const [ItemChek, setItemChek] = useState(0);
+    const { addItem } = useContext(CartContext);
 
+    const onCheck = (quantity) => {
 
-    const onCheck = (e) => {
-
-
-        if (e === 0) {
+        if (quantity === 0) {
             return null
         } else {
-            alert("Agregado: " + e)
-            setItemChek(e);
+            alert("Agregado: " + quantity)
+            setItemChek(quantity);
+            addItem(item, quantity);
         }
 
     }
@@ -67,11 +68,6 @@ export const ItemDetail = ({ item }) => {
                             <hr className='ItemDetail-hr'></hr>
                             <div>
                                 <span className='Precio-producto'>UYU$ {item.precio}</span>
-                            </div>
-                            <div>
-                                <p>
-                                    <b>Estado: </b>
-                                    {item.estado}</p>
                             </div>
                             <div>
                                 <p className='Descripcion-producto'>

@@ -320,7 +320,7 @@ hr {
 [role="button"] {
     cursor: pointer;
 }
-
+/////container
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -347,6 +347,43 @@ hr {
 }
 
 .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/////container2
+.container2 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container2 {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container2 {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container2 {
+        width: 1200px;
+    }
+}
+@media (min-width: 1500px) {
+    .container2 {
+        width: 1500px;
+    }
+}
+
+.container2-fluid {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -1312,6 +1349,10 @@ hr {
 .container:after,
 .container-fluid:before,
 .container-fluid:after,
+.container2:before,
+.container2:after,
+.container2-fluid:before,
+.container2-fluid:after,
 .row:before,
 .row:after {
     display: table;
@@ -1321,6 +1362,8 @@ hr {
 .clearfix:after,
 .container:after,
 .container-fluid:after,
+.container2:after,
+.container2-fluid:after,
 .row:after {
     clear: both;
 }

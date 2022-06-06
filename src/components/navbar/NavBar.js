@@ -41,13 +41,15 @@ const NavBar = () => {
                         <li>
                             <Link to={"/contacto"}>Contacto</Link>
                         </li>
+
                     </ul>
+
+
+
                 </li>
-                <ul>
-                    <li>
-                        <CartWidget />
-                    </li>
-                </ul>
+                <li>
+                    <CartWidget />
+                </li>
             </ul>
         </nav>
     );

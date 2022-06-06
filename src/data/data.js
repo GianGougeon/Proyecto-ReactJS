@@ -9,7 +9,7 @@ export const productos = [
         talle: "3t",
         descripcion: "Jean con lunares rosa con cintura ajustable elastizado",
         precio: 260,
-        stock: 1,
+        stock: 4,
         imagenURL: "https://i.ibb.co/FHncs5R/281489759-1905146419675418-2330629955635064811-n.jpg",
         imagenURL2: "https://i.ibb.co/gSHbsHk/282035344-424369182447057-7089374981565222818-n.jpg",
         imagenURL3: "https://i.ibb.co/88F9snk/282685922-759292418768281-8808850199621431724-n.jpg"
@@ -61,7 +61,7 @@ export const productos = [
         talle: "3t",
         descripcion: "",
         precio: 470,
-        stock: 0,
+        stock: 1,
         imagenURL: "https://i.ibb.co/jbjzM0K/279662921-1059419788317576-3090044238474935643-n.jpg",
         imagenURL2: "https://i.ibb.co/zHLb7yq/279716585-1657112271324233-8760382211639714565-n.jpg",
         imagenURL3: "https://i.ibb.co/rp8dcxt/279771953-5061328803943523-1101928064862233516-n.jpg"
