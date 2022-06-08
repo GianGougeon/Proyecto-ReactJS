@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     
     <>
 
-     {cargando ? <div className="dot-spin" /> : <ItemDetail  item={item}/>}
+     {cargando ? <div className='ItemDetailContainerLoader'><div className="dot-spin" /></div> : <ItemDetail  item={item}/>}
     
     </>
   )

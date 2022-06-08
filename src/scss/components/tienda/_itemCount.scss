@@ -36,7 +36,6 @@
 
     >button {
         border: 1px solid transparent;
-        background-color: rgb(194, 190, 190);
         width: 35px;
         height: 35px;
         border-radius: 50px;
@@ -46,7 +45,7 @@
         font-size: 2rem;
 
         &:active {
-            background-color: rgb(228, 226, 226);
+            box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
         }
     }
 

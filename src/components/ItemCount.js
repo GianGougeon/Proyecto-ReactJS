@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 
 const ItemCount = ({ initial, stock, onCheck }) => {
     // usestate
@@ -21,11 +22,11 @@ const ItemCount = ({ initial, stock, onCheck }) => {
             <div className="ItemCountDiv">
                 {stock === 0 ? null : <span className='Stock-producto'>Disponible: {stock}</span>}
                 <div className="ItemCount">
-                    {stock === 0 ? null : <button onClick={decrement}>−</button>}
+                    {stock === 0 ? null : <button onClick={decrement}><GrFormSubtract/></button>}
 
                     <label>{stockValue}</label>
 
-                    {stock === 0 ? null : <button onClick={increment}>+</button>}
+                    {stock === 0 ? null : <button onClick={increment}><GrFormAdd/></button>}
 
                 </div>
 

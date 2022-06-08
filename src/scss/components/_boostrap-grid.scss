@@ -100,12 +100,6 @@ figure {
     margin: 1em 40px;
 }
 
-hr {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
-}
 
 pre {
     overflow: auto;
@@ -261,60 +255,9 @@ img {
     vertical-align: middle;
 }
 
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.img-rounded {
-    border-radius: 6px;
-}
-
-.img-thumbnail {
-    padding: 4px;
-    line-height: 1.42857143;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-}
-
-.img-circle {
-    border-radius: 50%;
-}
-
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eeeeee;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
 }
 
 [role="button"] {

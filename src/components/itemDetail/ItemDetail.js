@@ -4,10 +4,15 @@ import { Carousel } from 'react-responsive-carousel';
 import ItemCount from '../ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
+import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
+import MetodoDePago from '../../img/metodosdepago.png';
 
 export const ItemDetail = ({ item }) => {
     const [ItemChek, setItemChek] = useState(0);
     const { addItem } = useContext(CartContext);
+    const [pago, setPago] = useState(false);
+    const [envio, setEnvio] = useState(false);
+    const [devoluciones, setDevoluciones] = useState(false);
 
     const onCheck = (quantity) => {
 
@@ -18,7 +23,15 @@ export const ItemDetail = ({ item }) => {
             setItemChek(quantity);
             addItem(item, quantity);
         }
-
+    }
+    const onPago = () => {
+        setPago(!pago);
+    }
+    const onEnvio = () => {
+        setEnvio(!envio);
+    }
+    const onDevoluciones = () => {
+        setDevoluciones(!devoluciones);
     }
 
     return (
@@ -89,21 +102,32 @@ export const ItemDetail = ({ item }) => {
                                     </ul>
                                 </div>}
                             <div>
+                                {/* Métodos de pago */}
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Métodos de pago</div>
-                                    <Link to={"#!"} className='ItemDetail-extra-drop'>+</Link>
+                                    <button onClick={onPago} className='ItemDetail-extra-drop'>{pago ? <GrFormSubtract /> : <GrFormAdd />}</button>
                                 </div>
+                                {pago ? <div className='ItemDetail-extra-dropdown'><img src={MetodoDePago}></img></div> : null}
+                                {/* Envío */}
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Envío</div>
-                                    <Link to={"#!"} className='ItemDetail-extra-drop'>+</Link>
+                                    <button onClick={onEnvio} className='ItemDetail-extra-drop'>{envio ? <GrFormSubtract /> : <GrFormAdd />}</button>
                                 </div>
+                                {envio ? <p className='ItemDetail-extra-dropdown'>
+                                    Envío a domicilio: $120
+                                    <br />
+                                    Retiro desde nuestro Local: Gratis</p> : null}
+                                {/* Devoluciones */}
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Devoluciones</div>
-                                    <Link to={"#!"} className='ItemDetail-extra-drop'>+</Link>
+                                    <button onClick={onDevoluciones} className='ItemDetail-extra-drop'>{devoluciones ? <GrFormSubtract /> : <GrFormAdd />}</button>
                                 </div>
+                                {devoluciones ? <p className='ItemDetail-extra-dropdown'>
+                                    Podrás pedir la devolución hasta 48 hs. luego de recibir el artículo. Para eso nos tienes que escribir a <b>infoLenuSecond@Lenu.com</b> solicitando la devolución.
+                                </p> : null}
                             </div>
                         </div>
                     </div>

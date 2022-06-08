@@ -4,6 +4,7 @@ import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/itemList/ItemListContainer'
 import ItemDetailContainer from './components/itemDetail/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/footer/footer';
 import Tienda from './views/Tienda'
 import Inicio from './views/Inicio'
 import Contacto from './views/Contacto'
@@ -26,6 +27,7 @@ const App = () => {
                         <Route path='/contacto' element={<Contacto />} />
                         <Route path='/cart' element={< Cart />} />
                     </Routes>
+                    <Footer />
                 </BrowserRouter>
             </CartContextProvider>
         </>

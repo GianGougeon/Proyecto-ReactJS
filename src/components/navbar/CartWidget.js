@@ -1,18 +1,22 @@
 import { BsFillCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 
 const CartWidget = () => {
-    // Carrito contador
-    let CartWidgetNumber = 7
+    const { CartWidgetNumber } = useContext(CartContext);
 
-    return(
+
+    return (
         <>
             <Link to={"/cart"}>
                 <div className="Cart-div">
                     <BsFillCartFill />
-                    <div className="BsFillCartFill-number">
-                        {CartWidgetNumber}
-                    </div>
+                    {CartWidgetNumber === 0
+                        ? null
+                        : <span className="BsFillCartFill-number">
+                            {CartWidgetNumber}
+                          </span>}
                 </div>
             </Link>
         </>

@@ -1,4 +1,7 @@
 /* ////////////////itemListContainer//////////////// */
+.ItemListContainerLoader{
+    min-height: calc((100vh - 160px) - 265px);
+}
 .div-tienda {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -7,6 +10,7 @@
     margin-right: auto;
     max-width: 1300px;
     border-width: 1px 1px;
+    min-height: calc((100vh - 86px) - 265px);
     >div {
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: transparent;

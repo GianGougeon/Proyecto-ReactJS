@@ -1,5 +1,9 @@
+.ItemDetailContainerLoader{
+    min-height: calc((100vh - 127px) - 265px);
+}
 .ItemDetail {
     margin: 20px;
+    
 }
 
 .indice-ItemDetail {
@@ -135,9 +139,23 @@
 .ItemDetail-extra-drop {
     margin: 0 20px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.ItemDetail-extra-dropdown{
+    margin-left: 5px;
+    margin-top: 10px;
+    font-weight: 300;
+    >img{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
 .slide {
     align-items: center;
     display: flex;
@@ -149,16 +167,17 @@
     justify-content: center;
     margin: 40px 0;
 
-    >ul{
+    >ul {
         display: flex;
         justify-content: center;
-        >li{
+
+        >li {
             text-decoration: none;
             list-style: none;
             padding: 0 4%;
         }
     }
-        
+
     li:nth-child(1) {
         a>button {
             border: 2px solid transparent;

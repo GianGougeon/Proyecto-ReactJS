@@ -4,6 +4,7 @@ import ItemListContainerReciente from '../components/inicio/ItemListContainerRec
 import banner1 from '../img/banner-1.png';
 import banner2 from '../img/banner-2.png';
 import banner3 from '../img/banner-3.png';
+import { FiArrowDownRight } from 'react-icons/fi';
 
 
 
@@ -53,7 +54,7 @@ const Inicio = () => {
 			</section>
 			<section className='Categoria-inicio'>
 				<div>
-					<h3>BUSCA POR CATEGORÍA</h3>
+					<h3>BUSCA POR CATEGORÍA <FiArrowDownRight /></h3>
 				</div>
 				<div>
 					<div>
@@ -74,7 +75,7 @@ const Inicio = () => {
 			<section className='Recientes-inicio'>
 				<div>
 					<h3>
-						AGREGADOS RECIENTEMENTE
+						AGREGADOS RECIENTEMENTE <FiArrowDownRight />
 					</h3>
 				</div>
 				<div>

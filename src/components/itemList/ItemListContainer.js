@@ -29,7 +29,7 @@ const ItemListContainer = () => {
     return (
         <>
             <CategoriasProductos /> {cargando
-                ? <div className="dot-spin" />
+                ? <div className="ItemListContainerLoader"><div className="dot-spin" /></div>
                 : <ItemList listaProductos={listaProductos} />}
         </>
     )
