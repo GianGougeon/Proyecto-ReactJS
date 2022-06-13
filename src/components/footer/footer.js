@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className='row'>
                     <div className='col-sm-6 col-md-3 col-sm-12 Footer-row1'>
                         <div className='Footer-Logo'>
-                            <Link to={"/"}><img src={Logo}></img></Link>
+                            <Link to={"/"}><img src={Logo} alt="Lenu-Second-Hand-Logo"></img></Link>
                         </div>
                     </div>
                     <div className='col-sm-6 col-md-3 col-sm-12 Footer-row2'>

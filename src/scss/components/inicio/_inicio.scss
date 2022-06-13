@@ -2,25 +2,52 @@
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-top: 2%;
+	position: relative;
+	overflow: hidden;
 
-	>img {
-		height: 412px;
+	.img-banner {
 
-		border: 4px solid #EBB1D7;
-		margin: 10px 10px;
+		height: 100vh!important;
 		border-radius: 5px;
-
-
-
+		z-index: -1;
 	}
 
-	img:nth-child(2) {
-		border: 4px solid #B2CADD;
-	}
+	>h1 {
+		font-family: $font-family-Lenu;
+		color: #773282;
+		position: absolute;
+		font-weight: 900;
+		font-size: clamp(7em, 8vw - 2em, 9em);
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-style: normal;
 
-	img:nth-child(3) {
-		border: 4px solid #003E38;
+	}
+	>div{
+		width: 35em;
+		height: 25em;
+		background: rgb(188, 194, 194);
+		border-radius: 50%;
+        filter: blur(80px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	>h2 {
+		font-family: $font-family-Lenu;
+		position: absolute;
+		color: #AC7A40;
+		font-style: normal;
+		z-index: 2;
+		font-weight: 900;
+		font-size: clamp(3em, 20vw - 1em, 4em);
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
 	}
 }
 
@@ -58,7 +85,6 @@
 			display: inline-block;
 			font-size: 2.3em;
 			padding: 10px 0;
-
 		}
 
 		>button {
@@ -132,6 +158,7 @@
 			border-color: transparent;
 			display: inline-block;
 			margin: 10px 0;
+
 			&:hover {
 				background-color: #3A1A06;
 
@@ -149,7 +176,7 @@
 
 @media (max-width: 600px) {
 
-	.banner-inicio,
+
 	.Regalos-inicio {
 		>img {
 

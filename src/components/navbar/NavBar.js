@@ -4,7 +4,7 @@ import logo2 from "../../img/logo-2.png";
 import CartWidget from "./CartWidget";
 const NavBar = () => {
     return (
-        <nav className="nav">
+        <header className="nav">
             <input type="checkbox" id="nav__checkbox" className="nav__checkbox" />
             <label htmlFor="nav__checkbox" className="nav__toggle">
                 <svg className="menu" viewBox="0 0 448 512" width={100} title="bars">
@@ -26,7 +26,7 @@ const NavBar = () => {
                         <img
                             className="logo-second-hand"
                             src={logo2}
-                            alt={"logo-second-hand"}
+                            alt={"Lenu-Second-Hand-Logo"}
                         />
                     </Link>
                 </li>
@@ -51,7 +51,7 @@ const NavBar = () => {
                     <CartWidget />
                 </li>
             </ul>
-        </nav>
+        </header>
     );
 };
 

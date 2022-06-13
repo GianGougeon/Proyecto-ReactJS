@@ -1,9 +1,10 @@
-.ItemDetailContainerLoader{
+.ItemDetailContainerLoader {
     min-height: calc((100vh - 127px) - 265px);
 }
+
 .ItemDetail {
     margin: 20px;
-    
+
 }
 
 .indice-ItemDetail {
@@ -14,7 +15,11 @@
     display: flex;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 1em;
+    line-height: 34px;
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 
     >li {
         text-decoration: none;
@@ -22,10 +27,77 @@
 
         >span {
             padding: 5px;
+            display: none;
         }
 
-        >a {
+        >a,
+        strong {
             cursor: pointer;
+            background: $main-color;
+            color: #fff;
+            margin: .2em .75em;
+            padding: 0 .75em;
+            height: 32px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            transition: all 0.2s ease-in-out;
+            &:hover,
+            &:hover::before,
+            &:hover::after {
+                background-color: $main-color-3;
+                color: #333;
+                transition: all 0.2s ease-in-out;
+            }
+
+            &::before {
+                content: "";
+                background: $main-color;
+                width: 1em;
+                height: 101%;
+                transition: background-color 0.2s ease-in-out;
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 100% 50%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 100% 50%);
+                display: inline-block;
+                position: absolute;
+                left: -0.96em;
+                @media (max-width: 500px) {
+                    left: -0.9em;
+                }
+            }
+
+            &::after {
+                content: "";
+                background: $main-color;
+                width: 1em;
+                height: 101%;
+                transition: background-color 0.2s ease-in-out;
+                -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+                clip-path: polygon(0 0, 100% 50%, 0 100%);
+                display: inline-block;
+                position: absolute;
+                right: -0.91em;
+                @media (max-width: 500px) {
+                    right: -0.9em;
+                }
+            }
+        }
+
+        >strong {
+            background-color: $main-color-3;
+            color: #333;
+            cursor: default;
+
+            &::after,
+            &::before {
+                background-color: $main-color-3;
+            }
+
+            & &:hover,
+            &:hover::before,
+            &:hover::after {
+                background-color: $main-color-3;
+            }
         }
     }
 }
@@ -92,6 +164,10 @@
 .carousel {
     margin: auto !important;
 
+    .carousel-status {
+        display: none;
+    }
+
     >div {
         width: 500px !important;
     }
@@ -146,16 +222,19 @@
     align-items: center;
     justify-content: center;
 }
-.ItemDetail-extra-dropdown{
+
+.ItemDetail-extra-dropdown {
     margin-left: 5px;
     margin-top: 10px;
     font-weight: 300;
-    >img{
+
+    >img {
         margin: auto;
         display: flex;
         justify-content: center;
     }
 }
+
 .slide {
     align-items: center;
     display: flex;

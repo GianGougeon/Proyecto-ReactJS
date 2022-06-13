@@ -77,7 +77,7 @@
             height: 40px;
             width: 40px;
             background-color: #e1e5ee;
-            
+
             @media (max-width:500px) {
                 font-size: 15px;
                 height: 30px;
@@ -241,7 +241,7 @@
 
 .cart-active {
     background-color: #08d072;
-    cursor: pointer!important;
+    cursor: pointer !important;
 
     &:active {
         box-shadow: inset 0px 6px 10px 0px rgb(0 0 0 / 50%);
@@ -256,6 +256,14 @@
     padding: 0 20px;
     display: flex;
     justify-content: space-around;
+
+    .Cart-items-titulo {
+        color: $clr-gray600;
+    }
+
+    li {
+        list-style: none;
+    }
 
     >img {
         width: 50px;
@@ -327,8 +335,9 @@
             align-items: center;
             width: 25px;
             height: 25px;
-            background-color: $clr-gray300;
+            background-color: transparent;
             font-weight: bold;
+            border: 3px solid $clr-gray700!important;
 
             @media(max-width:500px) {
                 width: 20px;
@@ -350,14 +359,16 @@
                 margin: 0 3px;
             }
 
-            button:nth-child(1) {
+            button:nth-child(1), button:nth-child(2) {
                 display: flex;
                 border-radius: 50%;
                 justify-content: center;
                 align-items: center;
+                padding: 3px;
                 width: 25px;
                 height: 25px;
-                background-color: $clr-gray300;
+                background-color: transparent;
+                border: 3px solid $clr-gray700!important;
                 font-weight: bold;
                 color: $clr-primary-dark;
 
@@ -373,25 +384,7 @@
             }
 
             button:nth-child(2) {
-                display: flex;
-                border-radius: 50%;
-                justify-content: center;
-                align-items: center;
-                width: 25px;
-                height: 25px;
-                background-color: $clr-gray300;
-                font-weight: bold;
                 color: rgb(224, 6, 6);
-
-                @media(max-width:500px) {
-                    width: 20px;
-                    height: 20px;
-                    font-size: 12px;
-                }
-
-                &:active {
-                    box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
-                }
             }
         }
     }
@@ -406,9 +399,28 @@
     width: auto;
     min-width: 30px;
 
+
+
     @media(max-width:500px) {
         font-size: 12px;
     }
+}
+
+.Cart-ItemCount-Button-Disable {
+    width: 23px;
+    
+    border: 2px solid #8fb0c9;
+    justify-content: center;
+    display: flex;
+    height: 23px;
+    align-items: center;
+    cursor: default;
+    box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
+    background-color: $clr-gray300!important;
+    >svg{
+        color: red;
+    }
+
 }
 
 .Cart-Section-2-Montos {

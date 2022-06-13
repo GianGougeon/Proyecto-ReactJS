@@ -22,13 +22,15 @@ const App = () => {
                     <Routes>
                         <Route path='/' element={< Inicio />} />
                         <Route path='/:tienda' element={<Tienda />} />
-                        <Route path='/tienda/category/:id' element={< ItemListContainer />} />
+                        <Route path='/tienda/category/:idCategoria' element={< ItemListContainer />} />
                         <Route path='/tienda/item/:id' element={< ItemDetailContainer />} />
                         <Route path='/contacto' element={<Contacto />} />
                         <Route path='/cart' element={< Cart />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
+
+                
             </CartContextProvider>
         </>
     );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import ItemCount from '../ItemCount';
@@ -13,6 +13,8 @@ export const ItemDetail = ({ item }) => {
     const [pago, setPago] = useState(false);
     const [envio, setEnvio] = useState(false);
     const [devoluciones, setDevoluciones] = useState(false);
+    const { cartList } = useContext(CartContext);
+
 
     const onCheck = (quantity) => {
 
@@ -33,6 +35,20 @@ export const ItemDetail = ({ item }) => {
     const onDevoluciones = () => {
         setDevoluciones(!devoluciones);
     }
+
+    // actualizar stock en el carrito
+    useEffect(() => {
+        if (cartList.length > 0) {
+            cartList.map(itemUpdate => {
+                if (itemUpdate.id === item.id) {
+                    itemUpdate.stock = item.stock;
+                    if (itemUpdate.cantidad > item.stock) {
+                        itemUpdate.cantidad = itemUpdate.stock;
+                    }
+                }
+            })
+        }
+    }, [cartList]);
 
     return (
         <section className='ItemDetail'>
@@ -57,21 +73,34 @@ export const ItemDetail = ({ item }) => {
                 <div className='row'>
                     {/* Carousel columna */}
                     <div className='col-sm-12 col-md-6'>
-                        <Carousel className='carousel'>
-                            <div>
-                                {/* img1 */}
-                                <img src={item.imagenURL} alt={item.titulo} />
-                            </div>
-                            <div>
-                                {/* img2 */}
-                                <img src={item.imagenURL2} alt={item.titulo} />
-                            </div>
-                            <div>
-                                {/* img2 */}
-                                <img src={item.imagenURL3} alt={item.titulo} />
-                            </div>
-                        </Carousel>
+                        {item.img[2] == undefined
+                            ? <Carousel className='carousel'>
+                                <div>
+                                    {/* img1 */}
+                                    <img src={item.img[0]} alt={item.titulo} />
+                                </div>
+                                <div>
+                                    {/* img2 */}
+                                    <img src={item.img[1]} alt={item.titulo} />
+                                </div>
+                            </Carousel>
+                            : <Carousel className='carousel'>
+                                <div>
+                                    {/* img1 */}
+                                    <img src={item.img[0]} alt={item.titulo} />
+                                </div>
+                                <div>
+                                    {/* img2 */}
+                                    <img src={item.img[1]} alt={item.titulo} />
+                                </div>
+                                <div>
+                                    {/* img3 */}
+                                    <img src={item.img[2]} alt={item.titulo} />
+                                </div>
+                            </Carousel>}
+
                     </div>
+                    {console.log(item.img[2])}
                     {/* Informacion columna */}
                     <div className="col-sm-12 col-md-6 ItemDetail-col2">
                         <div className='ItemDetail-col2-container'>
@@ -81,6 +110,10 @@ export const ItemDetail = ({ item }) => {
                             <hr className='ItemDetail-hr'></hr>
                             <div>
                                 <span className='Precio-producto'>UYU$ {item.precio}</span>
+                            </div>
+                            <div>
+
+                                <p>TALLE: {item.talle}</p>
                             </div>
                             <div>
                                 <p className='Descripcion-producto'>

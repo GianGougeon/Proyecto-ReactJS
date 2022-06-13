@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const CategoriasProductos = () => {
 
-    const { id, tienda } = useParams();
+    const { idCategoria } = useParams();
 
 
 
@@ -15,28 +15,28 @@ const CategoriasProductos = () => {
             <div className='Categoria'>
                 <Link to={'/tienda'}>
                     <div
-                        className={"tienda" === tienda
+                        className={idCategoria === undefined
                             ? "active"
                             : "no-active"}>
                         <p>Todo</p>
                     </div>
                 </Link>
                 <Link to={'/tienda/category/1'}>
-                    <div className={"1" === id
+                    <div className={"1" === idCategoria
                         ? "active"
                         : "no-active"}>
                         <p>Superior</p>
                     </div>
                 </Link>
                 <Link to={'/tienda/category/2'}>
-                    <div className={"2" === id
+                    <div className={"2" === idCategoria
                         ? "active"
                         : "no-active"}>
                         <p>Inferior</p>
                     </div>
                 </Link>
                 <Link to={'/tienda/category/3'}>
-                    <div className={"3" === id
+                    <div className={"3" === idCategoria
                         ? "active"
                         : "no-active"}>
                         <p>Calzados</p>

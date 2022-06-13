@@ -6,21 +6,22 @@ import { MdDeleteForever } from 'react-icons/md';
 import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 import { ImCross } from 'react-icons/im';
 import { BsCheckLg } from 'react-icons/bs';
+import { handleLongText } from '../components/handleLongText';
 
 
 const Cart = () => {
-    const { cartList, removeItem, clear, addSub, addMore, CartSubTotal, CartTotal } = useContext(CartContext);
+    const { cartList, removeItem, clear, addSub, addMore, CartSubTotal, CartTotal, Confirmacion } = useContext(CartContext);
     const changeButton = useMediaQuery('(max-width: 556px)');
-    const [active, setActive] = useState(false);
+
     const [activeTodo, setActiveTodo] = useState(false);
 
-    const Confirmacion = () => {
-        setActive(!active);
-    }
+
     const ConfirmacionTodo = () => {
         setActiveTodo(!activeTodo);
     }
 
+
+    
     return (
         <>
             <section className='Cart-Section container2'>
@@ -43,18 +44,22 @@ const Cart = () => {
                                     : cartList.map((item) => (
                                         <div key={item.id}>
                                             <div className='Cart-items'>
-                                                <img src={item.imagenURL} alt={item.titulo} />
+                                                <img src={item.img[0]} alt={item.titulo} />
                                                 <div>
-                                                    <p>
-                                                        {item.titulo}
-                                                    </p>
+                                                    <ul>
+                                                        <li>
+                                                            <Link to={`/tienda/item/${item.id}`}>
+                                                                <p className='Cart-items-titulo'>{changeButton ? handleLongText(item.titulo, 10) : item.titulo}</p>
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                                 {item.stock === 1
                                                     ? <div style={{ margin: "0 23px" }}><span style={{ borderRadius: "5px" }} className='Cart-itemCount'>{item.cantidad}</span></div>
                                                     : <div>
-                                                        <button onClick={() => addSub(item)}><GrFormSubtract /></button>
+                                                        {item.cantidad !== 1 ? <button onClick={() => addSub(item)}><GrFormSubtract /></button> : <button className='Cart-ItemCount-Button-Disable'><GrFormSubtract /></button>}
                                                         <span className='Cart-itemCount'>{item.cantidad}</span>
-                                                        <button onClick={() => addMore(item)}><GrFormAdd /></button>
+                                                        {item.stock !== item.cantidad ? <button onClick={() => addMore(item)}><GrFormAdd /></button> : <button className='Cart-ItemCount-Button-Disable'><GrFormAdd /></button>}
                                                     </div>
                                                 }
                                                 <div>
@@ -64,11 +69,11 @@ const Cart = () => {
                                                 </div>
                                                 <div>
 
-                                                    {active ? null : <button onClick={Confirmacion}>X</button>}
-                                                    {active
+                                                    {item.active ? null : <button onClick={() => Confirmacion(item.id)}>x</button>}
+                                                    {item.active
                                                         ? <div>
                                                             <button onClick={() => removeItem(item.id)}><BsCheckLg /></button>
-                                                            <button onClick={Confirmacion} ><ImCross /></button>
+                                                            <button onClick={() => Confirmacion(item.id)} ><ImCross /></button>
                                                         </div>
                                                         : null}
                                                 </div>

@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ItemListContainerReciente from '../components/inicio/ItemListContainerReciente';
-import banner1 from '../img/banner-1.png';
-import banner2 from '../img/banner-2.png';
-import banner3 from '../img/banner-3.png';
-import { FiArrowDownRight } from 'react-icons/fi';
 
 
 
@@ -13,18 +9,16 @@ const Inicio = () => {
 	const proximamente = () => {
 		alert("proximamente");
 	}
-	{/* Same as */ }
-
 
 	return (
 		<>
 			<section className='banner-inicio'>
-				<img src={banner1} alt={"hola"} />
-				<img src={banner2} alt={"hola"} />
-				<img src={banner3} alt={"hola"} />
+				<img className='img-banner' src="https://img.bekiamoda.com/articulos/portada/51000/51166.jpg" alt={"hola"} />
+				<h1>Lenu</h1>
+				<div></div>
+				<h2>second hand</h2>
 			</section>
-
-			<section className='container container-extra'>
+			<section className='container2 container-extra'>
 				<div className='row'>
 					<div className='col-sm-12 col-md-6'>
 						<div className='Regalos-inicio'>
@@ -54,7 +48,7 @@ const Inicio = () => {
 			</section>
 			<section className='Categoria-inicio'>
 				<div>
-					<h3>BUSCA POR CATEGORÍA <FiArrowDownRight /></h3>
+					<h3>BUSCA POR CATEGORÍA</h3>
 				</div>
 				<div>
 					<div>
@@ -75,7 +69,7 @@ const Inicio = () => {
 			<section className='Recientes-inicio'>
 				<div>
 					<h3>
-						AGREGADOS RECIENTEMENTE <FiArrowDownRight />
+						AGREGADOS RECIENTEMENTE
 					</h3>
 				</div>
 				<div>

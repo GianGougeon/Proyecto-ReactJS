@@ -3,6 +3,8 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
+
+
     // localStorage
     const cartStorage = JSON.parse(localStorage.getItem('cart'))
     // si esta vacio, lo inicializo con un array y lo guarda
@@ -11,8 +13,8 @@ const CartContextProvider = ({ children }) => {
 
     //useEffect
     useEffect(() => {
-            localStorage.setItem("cart", JSON.stringify(cartList))
- }, [cartList])
+        localStorage.setItem("cart", JSON.stringify(cartList))
+    }, [cartList])
 
     //Agrega el producto
     const addItem = (item, setCantidad) => {
@@ -52,10 +54,21 @@ const CartContextProvider = ({ children }) => {
         setCartList(cartList.filter((item) => item.id !== id));
     }
 
+    // botton de confirmacion de remover por cada item
+    const Confirmacion = (id) => {
+        setCartList(cartList.map((item) => item.id === id
+            ?
+            { ...item, active: !item.active }
+            : item))
+    }
+
     // Vacia el carrito
     const clear = () => {
         setCartList([]);
     }
+   
+
+
 
     // Total de cantidad de items en el carrito
     const CartWidgetNumber = cartList.reduce((cantidad, cartItem) => cantidad + cartItem.cantidad, 0)
@@ -68,7 +81,7 @@ const CartContextProvider = ({ children }) => {
 
     return (
         /* estado global */
-        <CartContext.Provider value={{ cartList, addItem, removeItem, clear, CartWidgetNumber, addMore, addSub, CartSubTotal, CartTotal }}>
+        <CartContext.Provider value={{ cartList, addItem, removeItem, clear, CartWidgetNumber, addMore, addSub, CartSubTotal, CartTotal, Confirmacion }}>
             {children}
         </CartContext.Provider>
     );

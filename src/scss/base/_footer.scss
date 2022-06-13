@@ -1,5 +1,5 @@
 .Footer {
-    padding: 30px 0 5px 0;
+    padding: 33px 0 5px 0;
     height: 100%;
     background-color: $clr-gray700;
     color: $clr-gray100;
@@ -38,7 +38,8 @@
 
             a {
                 color: white;
-                font-size: 1.1em;
+                font-size: 1em;
+                font-weight: 600;
                 display: flex;
                 text-decoration: none;
                 padding: 3px 0;
@@ -56,7 +57,8 @@
 
                 >a {
                     color: white;
-                    font-size: 1.1em;
+                    font-size: 1em;
+                font-weight: 600;
                     display: flex;
                     text-decoration: none;
                     padding: 3px 0;
@@ -165,7 +167,7 @@
 
         >ul>li {
             a {
-
+                
                 display: flex;
                 justify-content: center;
 

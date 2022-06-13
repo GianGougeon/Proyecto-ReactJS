@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const Items = ({ producto }) => {
-	const { id, titulo, imagenURL, descripcion, precio } = producto
+	const { id } = producto
 	return (
 		<div>
 			<div>
@@ -10,7 +10,7 @@ const Items = ({ producto }) => {
 						<div>
 							<div>
 								<Link to={`/tienda/item/${id}`}>
-									<img src={producto.imagenURL} alt={producto.titulo}/>
+									<img src={producto.img[0]} alt={producto.titulo}/>
 								</Link>
 							</div>
 						</div>

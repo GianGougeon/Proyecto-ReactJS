@@ -1,33 +1,33 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getData } from "../../data/data";
 import { ItemDetail } from './ItemDetail';
-const { productos } = require('../../data/data');
+import { fireStoreFetchOne } from '../utils/fireStoreFetch';
 
 const ItemDetailContainer = () => {
     //Variables de estado
     const [item, setItem] = useState([])
-    const [cargando, setCargando] = useState(false)
-    const {id} = useParams();
+    const [cargando, setCargando] = useState(true)
+    const { id } = useParams();
+
 
 
     useEffect(() => {
-      setCargando(true)
-      getData(2000, productos.find(item => item.id === parseInt(id)))
-      .then((res)=> setItem(res))
-      .catch((error)=> console.log(error))
-      .finally(()=> setCargando(false))
-  }, []);
+        setCargando(true);
+        fireStoreFetchOne(id)
+            .then(result => setItem(result))
+            .catch(err => console.log(err))
+            .finally(() => setCargando(false))
 
-  return (
-    
-    <>
+    }, []);
 
-     {cargando ? <div className='ItemDetailContainerLoader'><div className="dot-spin" /></div> : <ItemDetail  item={item}/>}
-    
-    </>
-  )
+    return (
+
+        <>
+
+            {cargando ? <div className='ItemDetailContainerLoader'><div className="dot-spin" /></div> : <ItemDetail item={item} />}
+
+        </>
+    )
 }
 
 export default ItemDetailContainer
