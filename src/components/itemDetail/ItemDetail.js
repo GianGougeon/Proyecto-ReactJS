@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import ItemCount from '../ItemCount';
+import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
 import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 import MetodoDePago from '../../img/metodosdepago.png';
+import Swal from 'sweetalert2'
+
 
 export const ItemDetail = ({ item }) => {
     const [ItemChek, setItemChek] = useState(0);
@@ -15,15 +17,23 @@ export const ItemDetail = ({ item }) => {
     const [devoluciones, setDevoluciones] = useState(false);
     const { cartList } = useContext(CartContext);
 
-
+    const sAlert = () => {
+        Swal.fire({
+            title: 'Agregado correctamente',
+            icon: 'success',
+            position: 'center',
+            showConfirmButton: false,
+            timer: 1000,
+          })
+    };
     const onCheck = (quantity) => {
 
         if (quantity === 0) {
             return null
         } else {
-            alert("Agregado: " + quantity)
             setItemChek(quantity);
             addItem(item, quantity);
+            sAlert();
         }
     }
     const onPago = () => {
@@ -100,7 +110,6 @@ export const ItemDetail = ({ item }) => {
                             </Carousel>}
 
                     </div>
-                    {console.log(item.img[2])}
                     {/* Informacion columna */}
                     <div className="col-sm-12 col-md-6 ItemDetail-col2">
                         <div className='ItemDetail-col2-container'>

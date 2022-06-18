@@ -2,15 +2,22 @@ import React, { useContext, useState } from 'react';
 import { useMediaQuery } from 'beautiful-react-hooks';
 import { CartContext } from '../components/context/CartContext';
 import { Link } from 'react-router-dom';
+import { handleLongText } from '../components/handleLongText';
+
 import { MdDeleteForever } from 'react-icons/md';
 import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 import { ImCross } from 'react-icons/im';
 import { BsCheckLg } from 'react-icons/bs';
-import { handleLongText } from '../components/handleLongText';
+
+
+
+import { updateDoc, setDoc, serverTimestamp, collection, doc, increment } from "firebase/firestore";
+import db from '../components/utils/firebaseConfig';
+
 
 
 const Cart = () => {
-    const { cartList, removeItem, clear, addSub, addMore, CartSubTotal, CartTotal, Confirmacion } = useContext(CartContext);
+    const { cartList, removeItem, clear, addSub, addMore, cartSubTotal, cartTotal, Confirmacion } = useContext(CartContext);
     const changeButton = useMediaQuery('(max-width: 556px)');
 
     const [activeTodo, setActiveTodo] = useState(false);
@@ -19,13 +26,48 @@ const Cart = () => {
     const ConfirmacionTodo = () => {
         setActiveTodo(!activeTodo);
     }
+    const Order = () => {
+        const itemsData = cartList.map(item => ({
+            id: item.id,
+            title: item.titulo,
+            precio: item.precio,
+            quantity: item.cantidad,
 
+        }));
 
-    
+        let order = {
+            buyer: {
+                name: 'Gianfranco Gougeon',
+                email: 'GianGougeon@gmail.com',
+                phone: '+598 78787878',
+            },
+            date: serverTimestamp(),
+            total: cartTotal,
+            items: itemsData,
+        };
+
+        console.log(order);
+
+        const fireStoreOrder = async () => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+        }
+        fireStoreOrder()
+            .then(res => alert("Orden realizada con exito " + res.id))
+            .catch(error => console.log(error));
+
+        clear();
+
+        cartList.forEach(async (element) => {
+            const itemRef = doc(db, "productos", element.id);
+            await updateDoc(itemRef, { stock: increment(-element.cantidad) });
+        });
+    };
+
     return (
         <>
             <section className='Cart-Section container2'>
-
                 <div className='row'>
                     <div className='col-sm-12 col-md-9 Cart-Section-01'>
                         <div className='Cart-Section-1'>
@@ -107,21 +149,24 @@ const Cart = () => {
                                 ? <div className='Cart-Section-2-Montos'>
                                     <div>
                                         <p>SubTotal:</p>
-                                        <span>$U {CartSubTotal}</span>
+                                        <span>$U {cartSubTotal}</span>
                                     </div>
                                     <div>
                                         <p>Total + IVA:</p>
-                                        <span>$U {CartTotal}</span>
+                                        <span>$U {cartTotal}</span>
                                     </div>
                                 </div>
                                 : null}
                             <hr></hr>
-                            <button
-                                className={cartList.length >= 1
-                                    ? "cart-active"
-                                    : "cart-no-active"}>
+                            {cartList.length >= 1 ? <button onClick={Order}
+                                className="cart-active">
                                 Comprar
                             </button>
+                                : <button
+                                    className="cart-no-active">
+                                    Comprar
+                                </button>}
+
                         </div>
                     </div>
                 </div>

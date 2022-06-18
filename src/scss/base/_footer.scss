@@ -4,12 +4,20 @@
     background-color: $clr-gray700;
     color: $clr-gray100;
     font-weight: 200;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 50px;
 
     >div>div>div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
@@ -28,7 +36,11 @@
             >h4 {
                 font-size: 2em;
                 text-transform: uppercase;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
             }
         }
@@ -40,9 +52,13 @@
                 color: white;
                 font-size: 1em;
                 font-weight: 600;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 text-decoration: none;
                 padding: 3px 0;
+                -webkit-transition: 0.2s;
+                -o-transition: 0.2s;
                 transition: 0.2s;
 
                 &:hover {
@@ -58,10 +74,14 @@
                 >a {
                     color: white;
                     font-size: 1em;
-                font-weight: 600;
+                    font-weight: 600;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
                     text-decoration: none;
                     padding: 3px 0;
+                    -webkit-transition: 0.2s;
+                    -o-transition: 0.2s;
                     transition: 0.2s;
 
                     &:hover {
@@ -77,10 +97,16 @@
     }
 
     .Footer-Contactanos-Redes {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         >ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
 
             >li:nth-child(1) {
@@ -88,7 +114,11 @@
 
                 a {
                     font-size: 3em;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-transition: 0.3s;
+                    -o-transition: 0.3s;
                     transition: 0.3s;
                     cursor: pointer;
                     color: $instagram-color;
@@ -98,11 +128,17 @@
                     }
                 }
             }
+
             li:nth-child(2) {
                 list-style: none;
+
                 a {
                     font-size: 3em;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-transition: 0.3s;
+                    -o-transition: 0.3s;
                     transition: 0.3s;
                     cursor: pointer;
                     color: $facebook-color;
@@ -111,11 +147,16 @@
                         color: $clr-gray150;
                     }
                 }
+            }
         }
-    }}
+    }
 
     .Footer-Derechos {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }
@@ -138,6 +179,8 @@
         .Footer-Logo {
             >a>img {
                 width: 185px !important;
+                z-index: 2;
+
             }
         }
     }
@@ -149,7 +192,11 @@
     .Footer-row2,
     .Footer-row3 {
         margin-bottom: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
@@ -157,7 +204,11 @@
     .Footer-Contactanos,
     .Footer-Siguenos {
         >div {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
 
             >h4 {
@@ -167,8 +218,14 @@
 
         >ul>li {
             a {
-                
+
+                display: -webkit-box;
+
+                display: -ms-flexbox;
+
                 display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
 
             }
@@ -177,9 +234,27 @@
 
     .Footer {
         .Footer-Logo {
+            position: relative;
+
             >a>img {
                 width: 150px;
             }
         }
+
     }
+}
+
+.Footer-Logo-blur {
+    
+    margin-top: 10px;
+    width: 140px;
+    height: 160px;
+    background: $clr-gray300;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(70px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

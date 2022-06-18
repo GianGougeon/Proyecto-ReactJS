@@ -1,6 +1,6 @@
 body::-webkit-scrollbar {
     width: .50em;
-    
+
 }
 
 body::-webkit-scrollbar-track {
@@ -8,9 +8,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    //color
+    /* color */
     background-color: #86B5CF;
-    //borde
+    /* borde */
     border: 1px solid #86B5CF;
     outline: 1px solid transparent;
     border-radius: 5px

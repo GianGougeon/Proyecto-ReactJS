@@ -16,14 +16,24 @@
     }
 
     .Cart-Section-01-borrarTodo {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: end;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         >button {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             color: #161d34;
             border: 1px solid black;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             font-weight: bold;
             text-transform: uppercase;
@@ -38,6 +48,7 @@
             }
 
             &:active {
+                -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             }
 
@@ -53,12 +64,20 @@
     }
 
     .Cart-Section-01-borrarTodoConfirm {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
         justify-content: end;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         >span {
             text-transform: uppercase;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             font-size: 1em;
 
@@ -68,8 +87,14 @@
         }
 
         >button {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             border-radius: 5px;
             margin: 0 5px;
@@ -85,6 +110,7 @@
             }
 
             &:active {
+                -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             }
 
@@ -102,15 +128,25 @@
 
 /* seccion1 */
 .Cart-Section-1 {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     >a {
         text-decoration: none;
         color: $clr-gray700;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         border: 1px solid black;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         font-weight: bold;
         text-transform: uppercase;
@@ -120,6 +156,7 @@
         background-color: $clr-gray300;
 
         &:active {
+            -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
         }
 
@@ -147,9 +184,15 @@
     >div {
         width: 34px;
         height: 10px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         background-color: $clr-gray400;
+        -webkit-transform: translateY(150%);
+        -ms-transform: translateY(150%);
         transform: translateY(150%);
 
         @media(min-width:769px) {
@@ -171,13 +214,19 @@
             background: $main-color-3;
             width: 98%;
             margin: revert;
+            background-image: -webkit-gradient(linear, left top, right top, from($main-color), color-stop($main-color-3), to($main-color));
+            background-image: -o-linear-gradient(left, $main-color, $main-color-3, $main-color);
             background-image: linear-gradient(to right, $main-color, $main-color-3, $main-color);
         }
     }
 }
 
 .Cart-Section-1p2-em {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 20px 0;
     font-size: 1.2em;
@@ -189,16 +238,29 @@
 
 /* seccion 2 */
 .Cart-Section-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 50px 0;
 
     >span {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         height: 45px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 266px;
         background-color: #767b91;
@@ -215,6 +277,8 @@
     >hr {
         border: 0;
         height: 2px;
+        background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop($main-color), color-stop($main-color), to(transparent));
+        background-image: -o-linear-gradient(left, transparent, $main-color, $main-color, transparent);
         background-image: linear-gradient(to right, transparent, $main-color, $main-color, transparent);
         width: 100%;
     }
@@ -244,6 +308,7 @@
     cursor: pointer !important;
 
     &:active {
+        -webkit-box-shadow: inset 0px 6px 10px 0px rgb(0 0 0 / 50%);
         box-shadow: inset 0px 6px 10px 0px rgb(0 0 0 / 50%);
     }
 }
@@ -254,7 +319,10 @@
 
 .Cart-items {
     padding: 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 
     .Cart-items-titulo {
@@ -271,18 +339,31 @@
 
     div:nth-child(2) {
         width: 176px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         @media(max-width:492px) {
             width: 76px;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
         }
 
         p {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             font-size: 1em;
 
@@ -293,28 +374,47 @@
     }
 
     div:nth-child(3) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         >button {
             width: 23px;
             background-color: transparent;
             border: 2px solid #8fb0c9;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             height: 23px;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
 
             &:active {
+                -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             }
         }
     }
 
     div:nth-child(4) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         @media(max-width:500px) {
@@ -323,21 +423,32 @@
     }
 
     div:nth-child(5) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         width: 60px;
 
         >button {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             border-radius: 50%;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             width: 25px;
-            height: 25px;
             background-color: transparent;
             font-weight: bold;
-            border: 3px solid $clr-gray700!important;
+            border: 3px solid $clr-gray700 !important;
 
             @media(max-width:500px) {
                 width: 20px;
@@ -346,29 +457,43 @@
             }
 
             &:active {
+                -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             }
         }
 
         >div {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
             justify-content: end;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
 
             >button {
                 margin: 0 3px;
             }
 
-            button:nth-child(1), button:nth-child(2) {
+            button:nth-child(1),
+            button:nth-child(2) {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 border-radius: 50%;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
                 align-items: center;
                 padding: 3px;
                 width: 25px;
                 height: 25px;
                 background-color: transparent;
-                border: 3px solid $clr-gray700!important;
+                border: 3px solid $clr-gray700 !important;
                 font-weight: bold;
                 color: $clr-primary-dark;
 
@@ -379,6 +504,7 @@
                 }
 
                 &:active {
+                    -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                     box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
                 }
             }
@@ -392,8 +518,14 @@
 
 .Cart-itemCount {
     background-color: #86b5cf69;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     height: 23px;
     width: auto;
@@ -408,16 +540,24 @@
 
 .Cart-ItemCount-Button-Disable {
     width: 23px;
-    
+
     border: 2px solid #8fb0c9;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 23px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     cursor: default;
+    -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
     box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
-    background-color: $clr-gray300!important;
-    >svg{
+    background-color: $clr-gray300 !important;
+
+    >svg {
         color: red;
     }
 
@@ -442,7 +582,11 @@
     }
 
     div:nth-child(1) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         margin: 0 10%;
 
@@ -452,7 +596,11 @@
     }
 
     div:nth-child(2) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         margin: 0 10%;
 

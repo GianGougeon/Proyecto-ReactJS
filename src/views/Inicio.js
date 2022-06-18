@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ItemListContainerReciente from '../components/inicio/ItemListContainerReciente';
+import portada from '../img/portada.webp';
 
 
 
@@ -13,7 +14,7 @@ const Inicio = () => {
 	return (
 		<>
 			<section className='banner-inicio'>
-				<img className='img-banner' src="https://img.bekiamoda.com/articulos/portada/51000/51166.jpg" alt={"hola"} />
+				<img className='img-banner' src={portada} alt={"Lenu-Second-Hand-Portada"} />
 				<h1>Lenu</h1>
 				<div></div>
 				<h2>second hand</h2>

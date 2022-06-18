@@ -1,10 +1,15 @@
-.Cart-div{
+.Cart-div {
     width: 57px;
     height: 57px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-left: 15px;
 }
+
 .BsFillCartFill-number {
     position: relative;
     width: 24px;
@@ -13,9 +18,15 @@
     right: 20%;
     background-color: red;
     border-radius: 67% 33% 65% 35%/46% 39% 61% 54%;
-    // numero
+    /*  numero */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #fff;
 }

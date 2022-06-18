@@ -22,11 +22,13 @@
 //carrito-icon
 @import './components/carrito-icon';
 
+//itemlistcontainer
+@import './components/tienda/itemListContainer';
+@import './components/serach';
+
 //ItemCount
 @import './components/tienda/itemCount';
 
-//itemlistcontainer
-@import './components/tienda/itemListContainer';
 
 //ItemDetail
 @import './components/tienda/itemDetail';

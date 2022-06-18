@@ -3,6 +3,8 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
+   const [cartWidgetNumber, setCartWidgetNumber] = useState(0);
+   const [cartSubTotal, setCartSubTotal] = useState(0);
 
 
     // localStorage
@@ -66,22 +68,22 @@ const CartContextProvider = ({ children }) => {
     const clear = () => {
         setCartList([]);
     }
-   
 
 
-
-    // Total de cantidad de items en el carrito
-    const CartWidgetNumber = cartList.reduce((cantidad, cartItem) => cantidad + cartItem.cantidad, 0)
-    // Subtotal de los items en el carrito
-    const CartSubTotal = cartList.reduce((subtotal, cartItem) => subtotal + cartItem.precio * cartItem.cantidad, 0)
+    // Total de cantidad de items en el carrito + se actualiza al momento de agregar/modificar un producto
+    useEffect(() => {
+        setCartWidgetNumber(cartList.reduce((cantidad, cartItem) => cantidad + cartItem.cantidad, 0))
+        // Subtotal de los items en el carrito
+        setCartSubTotal(cartList.reduce((subtotal, cartItem) => subtotal + cartItem.precio * cartItem.cantidad, 0))
+    }, [cartList])
     // Total + iva
-    const CartTotal = (CartSubTotal * 1.22).toFixed(0)
+    const cartTotal = (cartSubTotal * 1.22).toFixed(0)
 
 
 
     return (
         /* estado global */
-        <CartContext.Provider value={{ cartList, addItem, removeItem, clear, CartWidgetNumber, addMore, addSub, CartSubTotal, CartTotal, Confirmacion }}>
+        <CartContext.Provider value={{ cartList, addItem, removeItem, clear, cartWidgetNumber, addMore, addSub, cartSubTotal, cartTotal, Confirmacion }}>
             {children}
         </CartContext.Provider>
     );

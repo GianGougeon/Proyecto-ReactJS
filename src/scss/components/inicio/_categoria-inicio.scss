@@ -3,7 +3,11 @@
 
     >div {
         margin: 40px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         >h3 {
@@ -14,16 +18,26 @@
     }
 
     >div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         @media (max-width:1200px) {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
         }
 
         >div {
             position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 
             @media (max-width:1200px) {
@@ -33,6 +47,7 @@
             >img {
                 width: 400px;
                 margin: 10px;
+                -webkit-filter: blur(1px) grayscale(0.3);
                 filter: blur(1px) grayscale(0.3);
 
                 @media (max-width:500px) {
@@ -52,6 +67,8 @@
                         height: 50px;
                         position: absolute;
                         background-color: #DAC8B5;
+                        -webkit-transition: all 0.2s;
+                        -o-transition: all 0.2s;
                         transition: all 0.2s;
 
                         &:hover {
@@ -64,15 +81,24 @@
 
                         top: 80%;
                         left: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
                         transform: translate(-50%, -50%);
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
                         align-items: center;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
                         justify-content: center;
                         border-radius: 15px;
 
 
 
                         &:active {
+                            -webkit-box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                             box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                         }
 
@@ -89,13 +115,18 @@
         >div:nth-child(2) {
             >li>a>div {
                 background-color: #3255A5;
+                -webkit-transition: all 0.2s;
+                -o-transition: all 0.2s;
                 transition: all 0.2s;
 
                 &:active {
+                    -webkit-box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                     box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                 }
 
                 &:hover {
+                    -webkit-transition: all 0.2s;
+                    -o-transition: all 0.2s;
                     transition: all 0.2s;
                     background-color: $clr-gray300;
 
@@ -113,9 +144,12 @@
         >div:nth-child(3) {
             >li>a>div {
                 background-color: #868686;
+                -webkit-transition: all 0.2s;
+                -o-transition: all 0.2s;
                 transition: all 0.2s;
 
                 &:active {
+                    -webkit-box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                     box-shadow: inset 1px 5px 16px 3px rgb(0 0 0 / 60%);
                 }
 

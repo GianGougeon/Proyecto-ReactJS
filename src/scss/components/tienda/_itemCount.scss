@@ -1,7 +1,12 @@
-.contador{
+.contador {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
+
 .ItemCountDiv {
 
     background-color: #f5f5f5;
@@ -10,26 +15,33 @@
     >p {
         font-size: 1.5rem;
         padding: 30px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
     }
 }
 
 .ItemCount {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     border: 2px solid rgb(207, 205, 205);
     width: 300px;
     height: 60px;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     padding: 10px 0;
     border-radius: 5px;
     margin: auto;
-    // desactivar seleccionar texto
+    /* desactivar seleccionar texto */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -39,12 +51,19 @@
         width: 35px;
         height: 35px;
         border-radius: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         font-size: 2rem;
 
         &:active {
+            -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
             box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
         }
     }
@@ -52,21 +71,32 @@
     >label {
         margin: 0 50px;
         font-size: 1.5rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 }
 
 .ItemCount-Agregar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 15px 0;
-    // desactivar seleccionar texto
+    /* desactivar seleccionar texto */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;

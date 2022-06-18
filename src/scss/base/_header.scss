@@ -1,6 +1,7 @@
 *,
 *::before,
 *::after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@
 
 .nav {
     background-color: white;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, .6);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, .6);
     background-color: $clr-gray200;
 
@@ -37,9 +39,16 @@
     }
 
     &__menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 1rem;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
         li {
@@ -72,6 +81,8 @@
 }
 
 .nav__menu {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
 }
 
@@ -89,7 +100,11 @@
 
     >li {
         >a {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
             padding: 10px 0;
             text-transform: uppercase;
@@ -120,6 +135,9 @@
         }
 
         &__menu {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
             flex-direction: row;
 
             li {
@@ -135,6 +153,8 @@
 
     .nav__center {
         width: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 
         >li {
@@ -145,6 +165,7 @@
                 color: #18272F;
                 position: relative;
                 text-decoration: none;
+                -o-transition: all .3s ease;
                 transition: all .3s ease;
                 -webkit-transition: all .3s ease;
 
@@ -157,17 +178,30 @@
                     background-color: #83a5ab;
                     bottom: 5px;
                     left: 0;
+                    -webkit-transform-origin: right;
+                    -ms-transform-origin: right;
                     transform-origin: right;
+                    -webkit-transform: scaleX(0);
+                    -ms-transform: scaleX(0);
                     transform: scaleX(0);
+                    -webkit-transition: -webkit-transform .3s ease-in-out;
+                    transition: -webkit-transform .3s ease-in-out;
+                    -o-transition: transform .3s ease-in-out;
                     transition: transform .3s ease-in-out;
+                    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
                 }
 
                 &:hover::before {
+                    -webkit-transform-origin: left;
+                    -ms-transform-origin: left;
                     transform-origin: left;
+                    -webkit-transform: scaleX(1);
+                    -ms-transform: scaleX(1);
                     transform: scaleX(1);
                 }
 
                 &:hover {
+                    -o-transition: all .3s ease;
                     transition: all .3s ease;
                     -webkit-transition: all .3s ease;
                     color: #83a5ab;
@@ -184,9 +218,14 @@
 
 .logo-second-hand {
     width: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     border-radius: 50%;
+    -webkit-filter: contrast(2);
     filter: contrast(2);
 
 }

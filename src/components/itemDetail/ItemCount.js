@@ -3,8 +3,8 @@ import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 
 
 
-const ItemCount = ({ initial, stock, onCheck }) => {
 
+const ItemCount = ({ initial, stock, onCheck }) => {
     // usestate
     let [stockValue, setStock] = useState(initial);
     // incremento del valor

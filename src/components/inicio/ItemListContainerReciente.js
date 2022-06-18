@@ -20,8 +20,16 @@ const ItemListContainerReciente = () => {
 
     // ultimos 3 productos del array
     const ultimosProductos = (result) => {
-        const productos = result.slice(0, 3)
-        setListaProductos(productos)
+        const productoReciente = result.slice(-3);
+        if (result.length < 4) {
+            productoReciente.shift();
+        }
+
+        setListaProductos(productoReciente)
+
+
+
+        
     }
 
 

@@ -1,13 +1,18 @@
 .banner-inicio {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	position: relative;
 	overflow: hidden;
 
 	.img-banner {
 
-		height: 100vh!important;
+		height: 100vh !important;
 		border-radius: 5px;
 		z-index: -1;
 	}
@@ -19,23 +24,30 @@
 		font-weight: 900;
 		font-size: clamp(7em, 8vw - 2em, 9em);
 		z-index: 2;
-		top: 50%;
+		top: 45%;
 		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		font-style: normal;
 
 	}
-	>div{
+
+	>div {
 		width: 35em;
 		height: 25em;
 		background: rgb(188, 194, 194);
 		border-radius: 50%;
-        filter: blur(80px);
+		-webkit-filter: blur(80px);
+		filter: blur(80px);
 		position: absolute;
-		top: 50%;
+		top:45%;
 		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 	}
+
 	>h2 {
 		font-family: $font-family-Lenu;
 		position: absolute;
@@ -44,8 +56,10 @@
 		z-index: 2;
 		font-weight: 900;
 		font-size: clamp(3em, 20vw - 1em, 4em);
-		top: 60%;
+		top: 55%;
 		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 
 	}
@@ -56,8 +70,14 @@
 }
 
 .Regalos-inicio {
-	display: flex;
+	>div {
+		display: flex;
+		align-items: center;
+	}
 
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	padding: 0 20px;
 	margin: 30px;
 	border-radius: 20px;
@@ -75,10 +95,22 @@
 
 	div:nth-child(2) {
 		text-align: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		@media (min-width: 1200px){
+			margin: 0 71px;
+		}
 
 		>h2 {
 			color: #00302E;
@@ -96,18 +128,27 @@
 			font-size: 1.2em;
 			border-radius: 20px;
 			border-color: transparent;
+			-webkit-transition: width .3s, height .3s;
+			-o-transition: width .3s, height .3s;
 			transition: width .3s, height .3s;
 			margin: 10px 0;
+			-webkit-transition: all .1s ease-in;
+			-o-transition: all .1s ease-in;
 			transition: all .1s ease-in;
 
 			&:hover {
 				background-color: #007D7C;
+
+				-webkit-transition: all .1s ease-in;
+
+				-o-transition: all .1s ease-in;
 
 				transition: all .1s ease-in;
 			}
 
 			&:active {
 				background-color: #007D7C;
+				-webkit-box-shadow: inset 0px 3px 20px 0px #000000;
 				box-shadow: inset 0px 3px 20px 0px #000000;
 
 			}
@@ -117,6 +158,13 @@
 
 /* baby */
 .Babyshower-inicio {
+	>div {
+		display: flex;
+		align-items: center;
+	}
+
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 0 20px;
 	margin: 30px;
@@ -134,10 +182,22 @@
 
 	div:nth-child(2) {
 		text-align: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		@media (min-width: 1200px){
+			margin: 0 71px;
+		}
 
 		>h2 {
 			color: #00302E;
@@ -162,11 +222,16 @@
 			&:hover {
 				background-color: #3A1A06;
 
+				-webkit-transition: all .1s ease-in;
+
+				-o-transition: all .1s ease-in;
+
 				transition: all .1s ease-in;
 			}
 
 			&:active {
 				background-color: #3A1A06;
+				-webkit-box-shadow: inset 0px 3px 20px 0px #8f4806;
 				box-shadow: inset 0px 3px 20px 0px #8f4806;
 
 			}
@@ -179,27 +244,64 @@
 
 	.Regalos-inicio {
 		>img {
-
-
 			width: 80%;
 			height: 80%;
-
 			max-height: 412px;
 			max-width: 510px;
-
 		}
+
 	}
 
 	.Regalos-inicio,
 	.Babyshower-inicio {
-
-
 		height: 400px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
 
 		>div {
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+
+	}
+}
+
+@media (min-width: 601px) {
+
+
+	.Regalos-inicio {
+		>img {
+			width: 80%;
+			height: 80%;
+			max-height: 412px;
+			max-width: 510px;
+		}
+
+	}
+
+	.Regalos-inicio,
+	.Babyshower-inicio {
+		height: 340px;
+		min-width: 473px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+
+		>div {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
 		}
 

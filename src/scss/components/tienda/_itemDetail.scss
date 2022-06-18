@@ -12,11 +12,14 @@
 }
 
 .indice-estructura {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1em;
     line-height: 34px;
+
     @media (max-width: 500px) {
         font-size: 12px;
     }
@@ -41,12 +44,17 @@
             text-decoration: none;
             display: inline-block;
             position: relative;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
+
             &:hover,
             &:hover::before,
             &:hover::after {
                 background-color: $main-color-3;
                 color: #333;
+                -webkit-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
                 transition: all 0.2s ease-in-out;
             }
 
@@ -55,12 +63,15 @@
                 background: $main-color;
                 width: 1em;
                 height: 101%;
+                -webkit-transition: background-color 0.2s ease-in-out;
+                -o-transition: background-color 0.2s ease-in-out;
                 transition: background-color 0.2s ease-in-out;
                 -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 100% 50%);
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 100% 50%);
                 display: inline-block;
                 position: absolute;
                 left: -0.96em;
+
                 @media (max-width: 500px) {
                     left: -0.9em;
                 }
@@ -71,12 +82,15 @@
                 background: $main-color;
                 width: 1em;
                 height: 101%;
+                -webkit-transition: background-color 0.2s ease-in-out;
+                -o-transition: background-color 0.2s ease-in-out;
                 transition: background-color 0.2s ease-in-out;
                 -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
                 clip-path: polygon(0 0, 100% 50%, 0 100%);
                 display: inline-block;
                 position: absolute;
                 right: -0.91em;
+
                 @media (max-width: 500px) {
                     right: -0.9em;
                 }
@@ -119,7 +133,11 @@
 /* titulo prducto */
 .Titulo-producto {
     font-size: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     border-radius: 20px;
 }
@@ -128,6 +146,8 @@
 .ItemDetail-hr {
     border: 0;
     height: 2px;
+    background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop($main-color), to(transparent));
+    background-image: -o-linear-gradient(left, transparent, $main-color, transparent);
     background-image: linear-gradient(to right, transparent, $main-color, transparent);
 }
 
@@ -135,6 +155,8 @@
     border: 0;
     height: 1px;
     background: #333;
+    background-image: -webkit-gradient(linear, left top, right top, from($main-color), color-stop($main-color-3), to($main-color));
+    background-image: -o-linear-gradient(left, $main-color, $main-color-3, $main-color);
     background-image: linear-gradient(to right, $main-color, $main-color-3, $main-color);
 }
 
@@ -142,14 +164,22 @@
 .Stock-producto {
     font-size: 1.2em;
     padding: 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 /* precio producto */
 .Precio-producto {
     font-size: 1.7em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: start;
     padding: 5% 0;
 }
@@ -157,6 +187,8 @@
 .Descripcion-producto {
     font-size: 1.3em;
     padding: 10% 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-weight: 200;
 }
@@ -207,8 +239,14 @@
 }
 
 .ItemDetail-extra {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -218,8 +256,14 @@
     font-size: 1.5em;
     background-color: transparent;
     border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -230,24 +274,42 @@
 
     >img {
         margin: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }
 
 .slide {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .ItemCount-Check {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 40px 0;
 
     >ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         >li {
@@ -268,10 +330,12 @@
             border-radius: 5px;
             width: 200px;
             height: 40px;
+            -webkit-box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 50%);
             box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 50%);
 
             &:active {
                 background-color: $main-color-3;
+                -webkit-box-shadow: inset 0px 0px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 0px 10px 0px rgb(0 0 0 / 50%);
 
 
@@ -290,10 +354,12 @@
             border-radius: 5px;
             width: 200px;
             height: 40px;
+            -webkit-box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 50%);
             box-shadow: 0px 6px 10px 0px rgb(0 0 0 / 50%);
 
             &:active {
                 background-color: #86B5CF;
+                -webkit-box-shadow: inset 0px 0px 10px 0px rgb(0 0 0 / 50%);
                 box-shadow: inset 0px 0px 10px 0px rgb(0 0 0 / 50%);
 
 

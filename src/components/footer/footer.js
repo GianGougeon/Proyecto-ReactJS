@@ -13,6 +13,7 @@ const Footer = () => {
                             <Link to={"/"}><img src={Logo} alt="Lenu-Second-Hand-Logo"></img></Link>
                         </div>
                     </div>
+                        <div className='Footer-Logo-blur'>aaaaaa</div>
                     <div className='col-sm-6 col-md-3 col-sm-12 Footer-row2'>
                         <div className='Footer-Tienda'>
                             <div>
@@ -56,15 +57,15 @@ const Footer = () => {
                             </div>
                             <div className='Footer-Contactanos-Redes'>
                                 <ul>
-                                <li><a href='https://www.instagram.com/'><AiOutlineInstagram /></a></li>
-                                <li><a href='https://www.facebook.com/'><AiFillFacebook /></a></li>
+                                    <li><a href='https://www.instagram.com/'><AiOutlineInstagram /></a></li>
+                                    <li><a href='https://www.facebook.com/'><AiFillFacebook /></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className='Footer-Derechos'>
-                    <p>Copyright © 2022 Todos los derechos reservados.</p>
+                    <p>Elaborado por Gianfranco Gougeon.</p>
                 </div>
             </div>
         </footer>

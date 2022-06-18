@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
 
 const CartWidget = () => {
-    const { CartWidgetNumber } = useContext(CartContext);
+    const { cartWidgetNumber } = useContext(CartContext);
 
 
     return (
@@ -12,10 +12,10 @@ const CartWidget = () => {
             <Link to={"/cart"}>
                 <div className="Cart-div">
                     <BsFillCartFill />
-                    {CartWidgetNumber === 0
+                    {cartWidgetNumber === 0
                         ? null
                         : <span className="BsFillCartFill-number">
-                            {CartWidgetNumber}
+                            {cartWidgetNumber}
                           </span>}
                 </div>
             </Link>
