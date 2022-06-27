@@ -7,11 +7,13 @@ Proyecto E-commerce para Coder House
 - Navegación sin recargar
 - Full responsive
 - Filtrado por tipo de prenda simple
+- Filtrado por búsqueda
 - Detalle del producto con carousel
 - Carrito de compras
+- Checkout con un pequeño formulario
 - Llamada a la base de datos de Firestore para renderizar los productos
-- Posteo de orden de compra en base de datos de Firebase
-- Firestore para almacenar los datos con la colección de mis productos
+- Orden de compra con los datos del checkout en base de datos de Firebase
+- Firestore para almacenar los datos con la colección de los productos
 
 ## Tecnologías utilizadas
 

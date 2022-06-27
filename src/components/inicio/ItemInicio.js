@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Items = ({ producto }) => {
 	const { id } = producto
 	return (
-		<div>
+		<div style={{flexBasis: "53%"}}>
 			<div>
 				<article>
 					<div>
@@ -16,8 +16,7 @@ const Items = ({ producto }) => {
 						</div>
 					</div>
 					<div>
-						<span>{producto.titulo}</span>
-						<span>$U {producto.precio}</span>
+						<span style={{justifyContent: "center", textAlign: 'center'}}>{producto.titulo}</span>
 					</div>
 				</article>
 			</div>

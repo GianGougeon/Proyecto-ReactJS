@@ -1,14 +1,24 @@
-.form__group {
+.ItemListContainer-serach {
     position: relative;
     padding: 15px 0 0;
     margin-top: 10px;
-    width: 50%;
+    width: 56%;
     margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+
+    @media (max-width: 397px) {
+        font-size: .8rem;
+        width: 70%;
+
+    }
 }
 
-.form__field {
+.ItemListContainer-input {
     width: 100%;
     border: 0;
     border-bottom: 2px solid #9b9b9b;
@@ -17,17 +27,35 @@
     color: $clr-gray600;
     padding: 7px 0;
     background: transparent;
+    -webkit-transition: border-color 0.2s;
+    -o-transition: border-color 0.2s;
     transition: border-color 0.2s;
 
     @media (max-width: 513px) {
         font-size: 1.3rem;
     }
 
+    &::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    &::-moz-placeholder {
+        color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+        color: transparent;
+    }
+
+    &::-ms-input-placeholder {
+        color: transparent;
+    }
+
     &::placeholder {
         color: transparent;
     }
 
-    &:placeholder-shown~.form__label {
+    &:-moz-placeholder-shown~.ItemListContainer-label {
         font-size: 1.3rem;
         cursor: text;
         top: 20px;
@@ -37,22 +65,60 @@
             top: 0px;
         }
     }
+
+    &:-ms-input-placeholder~.ItemListContainer-label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+
+        @media (max-width: 513px) {
+            text-align: center;
+            top: 0px;
+        }
+    }
+
+    &:placeholder-shown~.ItemListContainer-label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+
+        @media (max-width: 513px) {
+            text-align: center;
+            top: 0px;
+        }
+    }
+
+    &:required,
+    &:invalid {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 }
 
-.form__label {
+.ItemListContainer-label {
     position: absolute;
     top: 0;
     display: block;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
     font-size: 1rem;
     color: #9b9b9b;
+    pointer-events: none;
+
+    @media (max-width: 397px) {
+        font-size: .8rem;
+
+    }
 }
 
-.form__field:focus {
-    ~.form__label {
+.ItemListContainer-input:focus {
+    ~.ItemListContainer-label {
         position: absolute;
         top: 0;
         display: block;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
         font-size: 1rem;
         color: #284258;
@@ -62,14 +128,19 @@
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
+    -o-border-image: -o-linear-gradient(left, $main-color, #284258, $main-color);
+    border-image: -webkit-gradient(linear, left top, right top, from($main-color), color-stop(#284258), to($main-color));
     border-image: linear-gradient(to right, $main-color, #284258, $main-color);
     border-image-slice: 1;
 }
 
-.form__field {
-
-    &:required,
-    &:invalid {
-        box-shadow: none;
-    }
+.ItemListContainer-Res {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 20vh;
+    font-size: 1.3rem;
 }

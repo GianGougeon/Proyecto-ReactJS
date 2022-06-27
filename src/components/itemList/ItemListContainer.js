@@ -29,19 +29,27 @@ const ItemListContainer = () => {
     // filtrado
     const results = !search
         ? listaProductos
-        : listaProductos.filter((dato) => dato.titulo.toLowerCase().includes(search.toLocaleLowerCase()))
+        : listaProductos.filter((item) => item.titulo.toLowerCase().includes(search.toLocaleLowerCase()))
 
     return (
         <>
             <CategoriasProductos />
-            <div class="form__group field">
-                <input value={search} onChange={searcher} type="input" className="form__field" placeholder="Name" />
-                <label className="form__label">Busqueda de productos...</label>
+            <div className="form__group ItemListContainer-serach">
+                <input value={search} onChange={searcher} type="input" className="ItemListContainer-input" placeholder="Buscar.." />
+                <label className="ItemListContainer-label">Busqueda de productos...</label>
             </div>
             {
                 cargando
                     ? <div className="ItemListContainerLoader"><div className="dot-spin" /></div>
-                    : <ItemList listaProductos={results} />
+                    : <>
+                        {
+                            !results.length
+                                ? <div className="ItemListContainer-Res">
+                                    <p>Sin resultados...</p>
+                                </div>
+                                : <ItemList listaProductos={results} />
+                        }
+                    </>
             }
         </>
     )

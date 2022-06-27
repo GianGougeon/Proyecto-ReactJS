@@ -1,0 +1,114 @@
+.Checkout-div {
+    >p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+}
+
+.Form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    input {
+        display: block;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid white;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    label {
+        line-height: 2;
+        text-align: left;
+        display: block;
+        margin-bottom: 13px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .submit-div {
+        margin: 40px 0
+    }
+
+    button[type="submit"],
+    input[type="submit"] {
+        background: #08D072;
+        text-transform: uppercase;
+        border: none;
+        padding: 20px;
+        font-size: 16px;
+        font-weight: 100;
+        letter-spacing: 5px;
+        margin: auto;
+    }
+
+
+    button[type="submit"]:active,
+    input[type="button"]:active,
+    input[type="submit"]:active {
+        -webkit-box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
+        box-shadow: inset 0px 5px 10px 0px rgb(0 0 0 / 50%);
+    }
+
+    input:disabled {
+        opacity: 0.4;
+    }
+
+    input[type="button"]:hover {
+        -webkit-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+    }
+
+    button[type="submit"],
+    input[type="button"],
+    input[type="submit"] {
+        -webkit-appearance: none;
+    }
+
+    .App {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    button[type="button"] {
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #333;
+        color: white;
+        border: none;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+    hr {
+        margin-top: 30px;
+    }
+
+    button {
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin-top: 40px;
+        border: 1px solid #333;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+}

@@ -17,6 +17,7 @@ export const ItemDetail = ({ item }) => {
     const [devoluciones, setDevoluciones] = useState(false);
     const { cartList } = useContext(CartContext);
 
+    //sweetalert2
     const sAlert = () => {
         Swal.fire({
             title: 'Agregado correctamente',
@@ -24,18 +25,18 @@ export const ItemDetail = ({ item }) => {
             position: 'center',
             showConfirmButton: false,
             timer: 1000,
-          })
+        })
     };
     const onCheck = (quantity) => {
-
         if (quantity === 0) {
             return null
         } else {
+            sAlert();
             setItemChek(quantity);
             addItem(item, quantity);
-            sAlert();
         }
     }
+    // Menús desplegables
     const onPago = () => {
         setPago(!pago);
     }
@@ -121,7 +122,6 @@ export const ItemDetail = ({ item }) => {
                                 <span className='Precio-producto'>UYU$ {item.precio}</span>
                             </div>
                             <div>
-
                                 <p>TALLE: {item.talle}</p>
                             </div>
                             <div>
@@ -148,35 +148,45 @@ export const ItemDetail = ({ item }) => {
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Métodos de pago</div>
-                                    <button onClick={onPago} className='ItemDetail-extra-drop'>{pago ? <GrFormSubtract /> : <GrFormAdd />}</button>
+                                    <button onClick={onPago} className='ItemDetail-extra-drop'>{pago
+                                        ? <GrFormSubtract />
+                                        : <GrFormAdd />}</button>
                                 </div>
-                                {pago ? <div className='ItemDetail-extra-dropdown'><img src={MetodoDePago}></img></div> : null}
+                                {pago
+                                    ? <div className='ItemDetail-extra-dropdown'><img src={MetodoDePago} alt='Metodos-De-Pago'></img></div>
+                                    : null}
                                 {/* Envío */}
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Envío</div>
-                                    <button onClick={onEnvio} className='ItemDetail-extra-drop'>{envio ? <GrFormSubtract /> : <GrFormAdd />}</button>
+                                    <button onClick={onEnvio} className='ItemDetail-extra-drop'>{envio
+                                        ? <GrFormSubtract />
+                                        : <GrFormAdd />}</button>
                                 </div>
-                                {envio ? <p className='ItemDetail-extra-dropdown'>
-                                    Envío a domicilio: $120
-                                    <br />
-                                    Retiro desde nuestro Local: Gratis</p> : null}
+                                {envio
+                                    ? <p className='ItemDetail-extra-dropdown'>
+                                        Envío a domicilio: $120
+                                        <br />
+                                        Retiro desde nuestro Local: Gratis</p>
+                                    : null}
                                 {/* Devoluciones */}
                                 <hr className='ItemDetail-hr-2'></hr>
                                 <div className='ItemDetail-extra'>
                                     <div>Devoluciones</div>
-                                    <button onClick={onDevoluciones} className='ItemDetail-extra-drop'>{devoluciones ? <GrFormSubtract /> : <GrFormAdd />}</button>
+                                    <button onClick={onDevoluciones} className='ItemDetail-extra-drop'>{devoluciones
+                                        ? <GrFormSubtract />
+                                        : <GrFormAdd />}</button>
                                 </div>
-                                {devoluciones ? <p className='ItemDetail-extra-dropdown'>
-                                    Podrás pedir la devolución hasta 48 hs. luego de recibir el artículo. Para eso nos tienes que escribir a <b>infoLenuSecond@Lenu.com</b> solicitando la devolución.
-                                </p> : null}
+                                {devoluciones
+                                    ? <p className='ItemDetail-extra-dropdown'>
+                                        Podrás pedir la devolución hasta 48 hs. luego de recibir el artículo. Para eso nos tienes que escribir a <b>infoLenuSecond@Example.com</b> solicitando la devolución.
+                                    </p>
+                                    : null}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
-
     )
 }

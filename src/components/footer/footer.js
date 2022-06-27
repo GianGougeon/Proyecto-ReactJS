@@ -65,7 +65,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='Footer-Derechos'>
-                    <p>Elaborado por Gianfranco Gougeon.</p>
+                    <p>Elaborado por <a href='https://www.linkedin.com/in/gian-gougeon/'>Gian Gougeon</a>.</p>
                 </div>
             </div>
         </footer>

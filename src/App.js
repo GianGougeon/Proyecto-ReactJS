@@ -9,7 +9,6 @@ import Tienda from './views/Tienda'
 import Inicio from './views/Inicio'
 import Contacto from './views/Contacto'
 import Cart from './views/Cart';
-import Checkout from './views/Checkout';
 import CartContextProvider from './components/context/CartContext';
 
 const App = () => {
@@ -22,17 +21,14 @@ const App = () => {
                     <NavBar />
                     <Routes>
                         <Route path='/' element={< Inicio />} />
-                        <Route path='/:tienda' element={<Tienda />} />
+                        <Route path='/tienda' element={<Tienda />} />
                         <Route path='/tienda/category/:idCategoria' element={< ItemListContainer />} />
                         <Route path='/tienda/item/:id' element={< ItemDetailContainer />} />
                         <Route path='/contacto' element={<Contacto />} />
                         <Route path='/cart' element={< Cart />} />
-                        <Route path='/Checkout' element={< Checkout />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
-
-
             </CartContextProvider>
         </>
     );

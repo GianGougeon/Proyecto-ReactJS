@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
 
-
     useEffect(() => {
         setCargando(true);
         fireStoreFetchOne(id)
@@ -19,13 +18,11 @@ const ItemDetailContainer = () => {
             .finally(() => setCargando(false))
 
     }, []);
-
     return (
-
         <>
-
-            {cargando ? <div className='ItemDetailContainerLoader'><div className="dot-spin" /></div> : <ItemDetail item={item} />}
-
+            {cargando
+                ? <div className='ItemDetailContainerLoader'><div className="dot-spin" /></div>
+                : <ItemDetail item={item} />}
         </>
     )
 }

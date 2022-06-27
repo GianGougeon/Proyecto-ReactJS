@@ -11,134 +11,111 @@ import { BsCheckLg } from 'react-icons/bs';
 
 
 
-import { updateDoc, setDoc, serverTimestamp, collection, doc, increment } from "firebase/firestore";
-import db from '../components/utils/firebaseConfig';
-
+import Checkout from '../components/Checkout';
 
 
 const Cart = () => {
     const { cartList, removeItem, clear, addSub, addMore, cartSubTotal, cartTotal, Confirmacion } = useContext(CartContext);
     const changeButton = useMediaQuery('(max-width: 556px)');
-
+    const [checkout, setCheckout] = useState(false);
     const [activeTodo, setActiveTodo] = useState(false);
 
-
+    // Boton para confirmar borrar todo el carrito
     const ConfirmacionTodo = () => {
         setActiveTodo(!activeTodo);
     }
-    const Order = () => {
-        const itemsData = cartList.map(item => ({
-            id: item.id,
-            title: item.titulo,
-            precio: item.precio,
-            quantity: item.cantidad,
-
-        }));
-
-        let order = {
-            buyer: {
-                name: 'Gianfranco Gougeon',
-                email: 'GianGougeon@gmail.com',
-                phone: '+598 78787878',
-            },
-            date: serverTimestamp(),
-            total: cartTotal,
-            items: itemsData,
-        };
-
-        console.log(order);
-
-        const fireStoreOrder = async () => {
-            const newOrderRef = doc(collection(db, "orders"));
-            await setDoc(newOrderRef, order);
-            return newOrderRef;
-        }
-        fireStoreOrder()
-            .then(res => alert("Orden realizada con exito " + res.id))
-            .catch(error => console.log(error));
-
-        clear();
-
-        cartList.forEach(async (element) => {
-            const itemRef = doc(db, "productos", element.id);
-            await updateDoc(itemRef, { stock: increment(-element.cantidad) });
-        });
-    };
-
+    // boton para el cambio al checkout con un pequeño dlay
+    const CheckoutButton = () => {
+        setTimeout(() => {
+            setCheckout(!checkout);
+        }, 100);
+    }
     return (
         <>
             <section className='Cart-Section container2'>
                 <div className='row'>
                     <div className='col-sm-12 col-md-9 Cart-Section-01'>
                         <div className='Cart-Section-1'>
-                            {changeButton ? <Link to={"/"}>🡰</Link> : <Link to={"/"}>🡰 Volver</Link>}
+                            {changeButton ? <Link to={"/tienda"}>🡰</Link> : <Link to={"/tienda"}>🡰 Tienda</Link>}
                             <span>Mi carrito</span>
-                            <div></div>
-                            <span>Envío</span>
-                            <div></div>
-                            <span>Pago</span>
+                            <div className={!checkout ? "cart-progress" : null}></div>
+                            <span className={!checkout ? "cart-progress" : null}>Checkout</span>
+                            <div className="cart-progress"></div>
+                            <span className="cart-progress">Pago</span>
                         </div>
                         <div className='Cart-Section-1p2'>
                             <div>
                                 <hr className='Cart-Section-hr' />
-                                {cartList.length === 0
-                                    ? <p className='Cart-Section-1p2-em'>Su carrito se encuentra Vacío</p>
-                                    : cartList.map((item) => (
-                                        <div key={item.id}>
-                                            <div className='Cart-items'>
-                                                <img src={item.img[0]} alt={item.titulo} />
-                                                <div>
-                                                    <ul>
-                                                        <li>
-                                                            <Link to={`/tienda/item/${item.id}`}>
-                                                                <p className='Cart-items-titulo'>{changeButton ? handleLongText(item.titulo, 10) : item.titulo}</p>
-                                                            </Link>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                {item.stock === 1
-                                                    ? <div style={{ margin: "0 23px" }}><span style={{ borderRadius: "5px" }} className='Cart-itemCount'>{item.cantidad}</span></div>
-                                                    : <div>
-                                                        {item.cantidad !== 1 ? <button onClick={() => addSub(item)}><GrFormSubtract /></button> : <button className='Cart-ItemCount-Button-Disable'><GrFormSubtract /></button>}
-                                                        <span className='Cart-itemCount'>{item.cantidad}</span>
-                                                        {item.stock !== item.cantidad ? <button onClick={() => addMore(item)}><GrFormAdd /></button> : <button className='Cart-ItemCount-Button-Disable'><GrFormAdd /></button>}
+                                {!checkout
+                                    ? <>{cartList.length === 0
+                                        ? <p className='Cart-Section-1p2-em'>Su carrito se encuentra Vacío</p>
+                                        : cartList.map((item) => (
+                                            <div key={item.id}>
+                                                <div className='Cart-items'>
+                                                    <img src={item.img[0]} alt={item.titulo} />
+                                                    <div>
+                                                        <ul>
+                                                            <li>
+                                                                <Link to={`/tienda/item/${item.id}`}>
+                                                                    <p className='Cart-items-titulo'>{changeButton ? handleLongText(item.titulo, 10) : item.titulo}</p>
+                                                                </Link>
+                                                            </li>
+                                                        </ul>
                                                     </div>
-                                                }
-                                                <div>
-                                                    <span>
-                                                        $U {item.precio}
-                                                    </span>
-                                                </div>
-                                                <div>
-
-                                                    {item.active ? null : <button onClick={() => Confirmacion(item.id)}>x</button>}
-                                                    {item.active
-                                                        ? <div>
-                                                            <button onClick={() => removeItem(item.id)}><BsCheckLg /></button>
-                                                            <button onClick={() => Confirmacion(item.id)} ><ImCross /></button>
+                                                    {item.stock === 1
+                                                        ? <div style={{ margin: "0 23px" }}><span style={{ borderRadius: "5px" }} className='Cart-itemCount'>{item.cantidad}</span></div>
+                                                        : <div>
+                                                            {item.cantidad !== 1
+                                                                ? <button onClick={() => addSub(item)}><GrFormSubtract /></button>
+                                                                : <button className='Cart-ItemCount-Button-Disable'><GrFormSubtract /></button>}
+                                                            <span className='Cart-itemCount'>{item.cantidad}</span>
+                                                            {item.stock !== item.cantidad
+                                                                ? <button onClick={() => addMore(item)}><GrFormAdd /></button>
+                                                                : <button className='Cart-ItemCount-Button-Disable'><GrFormAdd /></button>}
                                                         </div>
-                                                        : null}
+                                                    }
+                                                    <div>
+                                                        <span>
+                                                            $U {item.precio}
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        {item.active ? null : <button onClick={() => Confirmacion(item.id)}>x</button>}
+                                                        {item.active
+                                                            ? <div>
+                                                                <button onClick={() => removeItem(item.id)}><BsCheckLg /></button>
+                                                                <button onClick={() => Confirmacion(item.id)} ><ImCross /></button>
+                                                            </div>
+                                                            : null}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <hr className='Cart-Section-hr' />
-                                        </div>))}
+                                                <hr className='Cart-Section-hr' />
+                                            </div>))}
+                                    </>
+                                    : <>
+                                        <Checkout />
+                                    </>}
                             </div>
                         </div>
-                        {cartList.length >= 1 ? activeTodo
-                            ? null
-                            : <div className='Cart-Section-01-borrarTodo'>
-                                <button onClick={ConfirmacionTodo}><MdDeleteForever />Todo</button>
-                            </div>
-                            : null
-                        }
-
-                        {cartList.length >= 1 ? activeTodo
-                            ? <div className='Cart-Section-01-borrarTodoConfirm'>
-                                <span>¿Seguro?</span>
-                                <button onClick={clear}><BsCheckLg /></button>
-                                <button onClick={ConfirmacionTodo} ><ImCross /></button>
-                            </div>
-                            : null
+                        {!checkout
+                            ? <>
+                                {cartList.length >= 1 ? activeTodo
+                                    ? null
+                                    : <div className='Cart-Section-01-borrarTodo'>
+                                        <button onClick={ConfirmacionTodo}><MdDeleteForever />Todo</button>
+                                    </div>
+                                    : null
+                                }
+                            </>
+                            : null}
+                        {cartList.length >= 1
+                            ? activeTodo
+                                ? <div className='Cart-Section-01-borrarTodoConfirm'>
+                                    <span>¿Seguro?</span>
+                                    <button onClick={clear}><BsCheckLg /></button>
+                                    <button onClick={ConfirmacionTodo} ><ImCross /></button>
+                                </div>
+                                : null
                             : null
                         }
                     </div>
@@ -158,24 +135,24 @@ const Cart = () => {
                                 </div>
                                 : null}
                             <hr></hr>
-                            {cartList.length >= 1 ? <button onClick={Order}
-                                className="cart-active">
-                                Comprar
-                            </button>
-                                : <button
-                                    className="cart-no-active">
-                                    Comprar
-                                </button>}
-
+                            {!checkout
+                                ? <>
+                                    {cartList.length >= 1
+                                        ? <button
+                                            onClick={CheckoutButton}
+                                            className="cart-active">
+                                            Continuar
+                                        </button>
+                                        : <button
+                                            className="cart-no-active">
+                                            Continuar
+                                        </button>}
+                                </>
+                                : <button className="cart-cancel" onClick={CheckoutButton}>Cancelar</button>}
                         </div>
                     </div>
                 </div>
             </section>
-
-
-
-
-
         </>
     );
 }

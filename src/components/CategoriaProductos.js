@@ -6,7 +6,6 @@ const CategoriasProductos = () => {
     const { idCategoria } = useParams();
 
 
-
     return (
         <div>
             <div className='inicioEdad-categoria'>

@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import ItemListReciente from "./ItemListReciente";
+import { useEffect, useState } from "react";
 import { fireStoreFetch } from "../utils/fireStoreFetch";
+import ItemInicio from './ItemInicio'
+
 
 const ItemListContainerReciente = () => {
 
@@ -18,26 +18,28 @@ const ItemListContainerReciente = () => {
             .finally(() => setCargando(false))
     }, []);
 
-    // ultimos 3 productos del array
+    // 3 productos del array
     const ultimosProductos = (result) => {
         const productoReciente = result.slice(-3);
-        if (result.length < 4) {
+        if (result.length < 2) {
             productoReciente.shift();
         }
-
         setListaProductos(productoReciente)
-
-
-
-        
     }
-
 
     return (
         <>
             {cargando
                 ? <div className="dot-spin" />
-                : <ItemListReciente listaProductos={listaProductos} />}
+                : <div className="div-tienda">
+                    <div>
+                        <div>
+                            <div>
+                                {listaProductos.map((productos) => <ItemInicio key={productos.id} producto={productos} />)}
+                            </div>
+                        </div>
+                    </div>
+                </div>}
         </>
     )
 }
