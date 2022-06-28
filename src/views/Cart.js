@@ -9,10 +9,7 @@ import { GrFormSubtract, GrFormAdd } from 'react-icons/gr';
 import { ImCross } from 'react-icons/im';
 import { BsCheckLg } from 'react-icons/bs';
 
-
-
 import Checkout from '../components/Checkout';
-
 
 const Cart = () => {
     const { cartList, removeItem, clear, addSub, addMore, cartSubTotal, cartTotal, Confirmacion } = useContext(CartContext);
@@ -24,7 +21,7 @@ const Cart = () => {
     const ConfirmacionTodo = () => {
         setActiveTodo(!activeTodo);
     }
-    // boton para el cambio al checkout con un pequeño dlay
+    // boton para pasar al checkout con un pequeño d-lay
     const CheckoutButton = () => {
         setTimeout(() => {
             setCheckout(!checkout);
@@ -41,7 +38,7 @@ const Cart = () => {
                             <div className={!checkout ? "cart-progress" : null}></div>
                             <span className={!checkout ? "cart-progress" : null}>Checkout</span>
                             <div className="cart-progress"></div>
-                            <span className="cart-progress">Pago</span>
+                            <span className="cart-progress">Envío</span>
                         </div>
                         <div className='Cart-Section-1p2'>
                             <div>

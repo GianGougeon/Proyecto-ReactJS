@@ -63,12 +63,12 @@ const Checkout = () => {
             .then(res => sAlert(res.id))
             .catch(error => console.log(error));
 
-        // clear();
+        clear();
 
-        // cartList.forEach(async (element) => {
-        //     const itemRef = doc(db, "productos", element.id);
-        //     await updateDoc(itemRef, { stock: increment(-element.cantidad) });
-        // });
+        cartList.forEach(async (element) => {
+            const itemRef = doc(db, "productos", element.id);
+            await updateDoc(itemRef, { stock: increment(-element.cantidad) });
+        });
     }
 
     return (

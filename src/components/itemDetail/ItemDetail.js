@@ -47,18 +47,12 @@ export const ItemDetail = ({ item }) => {
         setDevoluciones(!devoluciones);
     }
 
-    // actualizar stock en el carrito
+    // actualizar stock en el carrito si se pasa el monto al stock
     useEffect(() => {
-        if (cartList.length > 0) {
-            cartList.map(itemUpdate => {
-                if (itemUpdate.id === item.id) {
-                    itemUpdate.stock = item.stock;
-                    if (itemUpdate.cantidad > item.stock) {
-                        itemUpdate.cantidad = itemUpdate.stock;
-                    }
-                }
-            })
-        }
+        cartList.length > 0 && cartList.forEach(itemUpdate => {
+            itemUpdate.id === item.id && (itemUpdate.stock = item.stock)
+            itemUpdate.cantidad > item.stock && (itemUpdate.cantidad = itemUpdate.stock)
+        })
     }, [cartList]);
 
     return (

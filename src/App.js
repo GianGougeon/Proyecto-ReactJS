@@ -1,4 +1,3 @@
-import './css/App.css';
 import './css/style.css'
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/itemList/ItemListContainer'
@@ -21,10 +20,10 @@ const App = () => {
                     <NavBar />
                     <Routes>
                         <Route path='/' element={< Inicio />} />
-                        <Route path='/tienda' element={<Tienda />} />
+                        <Route path='/tienda' element={< Tienda />} />
                         <Route path='/tienda/category/:idCategoria' element={< ItemListContainer />} />
                         <Route path='/tienda/item/:id' element={< ItemDetailContainer />} />
-                        <Route path='/contacto' element={<Contacto />} />
+                        <Route path='/contacto' element={< Contacto />} />
                         <Route path='/cart' element={< Cart />} />
                     </Routes>
                     <Footer />
